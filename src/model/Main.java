@@ -45,6 +45,9 @@ public class Main {
         for (Boat b : VALID_BOATS) {
             System.out.println("<" + b.getM() + ", " + b.getC() + ">");
         }
+
+        Node root = new Node(initialState);
+        root.init();
     }
 
     /**
