@@ -43,7 +43,7 @@ public class Main {
     private void run() {
         System.out.println("valid boats:");
         for (Boat b : VALID_BOATS) {
-            System.out.println("<" + b.getM() + ", " + b.getC() + ">");
+            System.out.println(b);
         }
 
         Node root = new Node(initialState);

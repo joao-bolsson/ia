@@ -55,4 +55,9 @@ public class Boat {
         return c;
     }
 
+    @Override
+    public String toString() {
+        return "<" + m + ", " + c + ">";
+    }
+
 }

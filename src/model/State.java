@@ -62,4 +62,9 @@ public class State {
         return margin;
     }
 
+    @Override
+    public String toString() {
+        return "<" + m + ", " + c + ", " + margin + ">";
+    }
+
 }
