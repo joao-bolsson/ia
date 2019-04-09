@@ -29,8 +29,8 @@ public class State {
 
     }
 
-    private final int m, c;
-    private final Margin margin;
+    protected final int m, c;
+    protected final Margin margin;
 
     /**
      * Creates a state. Default construct.

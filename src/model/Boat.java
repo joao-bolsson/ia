@@ -7,6 +7,11 @@ package model;
  */
 public class Boat {
 
+    /**
+     * Max number of passengers.
+     */
+    private static final int MAX = 2;
+
     private final int m, c;
 
     /**
@@ -21,12 +26,33 @@ public class Boat {
     }
 
     /**
-     * Returns if this operator is valid or not.
+     * Returns if this operator is valid or not. The boat has a max capability that must be respected and the boat must
+     * never be empty.
      *
      * @return If the number of missionaries is the boat is equals or greater than cannibals - true, else - false.
      */
     public boolean isValid() {
-        return m >= c;
+        if (m + c > 0 && m + c <= MAX) {
+            if (m == 0) {
+                return true;
+            }
+            return m >= c;
+        }
+        return false;
+    }
+
+    /**
+     * @return The number of missionaries in the boat.
+     */
+    public int getM() {
+        return m;
+    }
+
+    /**
+     * @return The number of cannibals in the boat.
+     */
+    public int getC() {
+        return c;
     }
 
 }
