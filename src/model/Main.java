@@ -69,17 +69,6 @@ public class Main {
         Graph graph = new Graph(init);
         graph.build();
 
-//        List<Edge> edges = graph.getEdges();
-//
-//        for (Edge e : edges) {
-//            System.out.println(e);
-//        }
-//
-//        List<Vertex> vertices = graph.getVertices();
-//
-//        for (Vertex v : vertices) {
-//            System.out.println(v);
-//        }
         Search search = new Search(graph);
         search.deepSearch(init, finalState);
     }
