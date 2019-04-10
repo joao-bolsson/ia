@@ -1,7 +1,9 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 /**
  *
@@ -10,17 +12,13 @@ import java.util.List;
  */
 public class Graph {
 
+    private final Vertice first;
+
     private final List<Edge> edges = new ArrayList<>();
     private final List<Vertice> vertices = new ArrayList<>();
 
-    public Graph() {
-        // empty
-    }
-
-    public void addVertice(final Vertice vertice) {
-        if (!vertices.contains(vertice)) {
-            vertices.add(vertice);
-        }
+    public Graph(final Vertice first) {
+        this.first = first;
     }
 
     public List<Edge> getEdges() {
@@ -31,13 +29,33 @@ public class Graph {
         return vertices;
     }
 
-    public void addEdge(final Edge edge) {
-        if (!edges.contains(edge)) {
-            edges.add(edge);
-
-            addVertice(edge.getOrigin());
-            addVertice(edge.getDest());
-        }
+    public void build() {
+        add(first);
     }
 
+    private void add(final Vertice v) {
+        if (!vertices.contains(v) && v != null) {
+            vertices.add(v);
+
+            Iterator<Map.Entry<Boat, Vertice>> iterator = v.getNeighbors().entrySet().iterator();
+
+            System.out.println("adiciona filhos do " + v);
+            while (iterator.hasNext()) {
+                Map.Entry<Boat, Vertice> next = iterator.next();
+
+                Vertice child = next.getValue();
+
+                System.out.println("filho adc: " + child);
+
+                Edge edge = new Edge(next.getKey(), v, child);
+                if (!edges.contains(edge)) {
+                    System.out.println("adciona edge: " + edge);
+                    edges.add(edge);
+                } else {
+                    System.out.println("jah contem edge: " + edge);
+                }
+                add(child);
+            }
+        }
+    }
 }

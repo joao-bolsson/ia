@@ -11,19 +11,24 @@ import java.util.Objects;
  */
 public class Vertice extends State {
 
-    private final Vertice parent;
+    private boolean visited = false;
 
     private final Map<Boat, Vertice> neighbors = new HashMap<>();
 
-    public Vertice(final State state, final Vertice parent) {
+    public Vertice(final State state) {
         super(state.m, state.c, state.margin);
-        this.parent = null;
     }
 
-    public Vertice(final int m, final int c, final Margin margin, final Vertice parent) {
+    public Vertice(final int m, final int c, final Margin margin) {
         super(m, c, margin);
+    }
 
-        this.parent = parent;
+    public void setVisited(boolean visited) {
+        this.visited = visited;
+    }
+
+    public boolean isVisited() {
+        return visited;
     }
 
     public Map<Boat, Vertice> getNeighbors() {
@@ -39,12 +44,8 @@ public class Vertice extends State {
         return neighbors;
     }
 
-    public Vertice getParent() {
-        return parent;
-    }
-
     public Vertice canApplyOperator(final Boat boat) {
-        Vertice currentNode = new Vertice(this, parent);
+        Vertice currentNode = new Vertice(this);
 
         currentNode.m -= boat.getM();
         currentNode.c -= boat.getC();
@@ -55,11 +56,11 @@ public class Vertice extends State {
 
         Margin otherMargin = margin.equals(Margin.Left) ? Margin.Right : Margin.Left;
 
-        Vertice otherNode = new Vertice(otherM, otherC, otherMargin, this);
+        Vertice otherNode = new Vertice(otherM, otherC, otherMargin);
         otherNode.m += boat.getM();
         otherNode.c += boat.getC();
 
-        if (currentNode.isValid() && otherNode.isValid() && boat.isValid() && !otherNode.equals(parent)) {
+        if (currentNode.isValid() && otherNode.isValid() && boat.isValid()) {
             return otherNode;
         }
         return null;
@@ -71,7 +72,6 @@ public class Vertice extends State {
         hash = 29 * hash + Objects.hashCode(this.c);
         hash = 29 * hash + Objects.hashCode(this.m);
         hash = 29 * hash + Objects.hashCode(this.margin);
-        hash = 29 * hash + Objects.hashCode(this.parent);
         return hash;
     }
 
@@ -86,10 +86,7 @@ public class Vertice extends State {
 
         Vertice vertice = (Vertice) obj;
 
-        boolean parentEquals = (vertice.parent == null && parent == null) || (parent != null && parent.equals(vertice))
-                || (vertice.parent != null && vertice.parent.equals(parent));
-
-        return !(vertice.c != c || vertice.m != m || !vertice.margin.equals(margin) || !parentEquals);
+        return !(vertice.c != c || vertice.m != m || !vertice.margin.equals(margin));
     }
 
 }

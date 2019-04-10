@@ -1,9 +1,7 @@
 package model;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
 
 /**
  *
@@ -42,26 +40,39 @@ public class Main {
                 State.Margin.Left.equals(INITIAL_MARGIN) ? State.Margin.Right : State.Margin.Left);
     }
 
+    private boolean test() {
+        Vertice root = new Vertice(new State(3, 3, State.Margin.Left));
+
+        Vertice child = new Vertice(0, 2, State.Margin.Right);
+
+        Edge a = new Edge(new Boat(0, 2), root, child);
+        Edge b = new Edge(new Boat(0, 2), child, root);
+
+        return !a.equals(b);
+    }
+
     private void run() {
-        Vertice init = new Vertice(initialState, null);
+        if (!test()) {
+            System.out.println("FALHOU NO TESTE");
+            return;
+        }
+
+        Vertice init = new Vertice(initialState);
 
         // add initial state
-        Graph graph = new Graph();
-        graph.addVertice(init);
-
-        Iterator<Map.Entry<Boat, Vertice>> it = init.getNeighbors().entrySet().iterator();
-
-        while (it.hasNext()) {
-            Map.Entry<Boat, Vertice> next = it.next();
-
-            Vertice vertice = next.getValue();
-            graph.addEdge(new Edge(next.getKey(), vertice.getParent(), vertice));
-        }
+        Graph graph = new Graph(init);
+        graph.build();
 
         List<Edge> edges = graph.getEdges();
 
         for (Edge e : edges) {
-            System.out.println(e.getOrigin() + "__" + e.getBoat() + "__" + e.getDest());
+            System.out.println(e);
+        }
+
+        List<Vertice> vertices = graph.getVertices();
+
+        for (Vertice v : vertices) {
+            System.out.println(v);
         }
 
     }

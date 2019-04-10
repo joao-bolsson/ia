@@ -66,8 +66,8 @@ public class Edge {
 
         Edge edge = (Edge) obj;
 
-        return edge.visited == visited && edge.boat.equals(boat) && edge.dest.equals(dest)
-                && edge.origin.equals(origin);
+        return edge.dest.equals(dest) && edge.origin.equals(origin) && edge.boat.equals(boat)
+                && edge.visited == visited;
     }
 
 }
