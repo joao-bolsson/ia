@@ -92,7 +92,7 @@ public class State {
 
         State state = (State) obj;
 
-        return !(state.c != c || state.m != m || !state.margin.equals(margin));
+        return state.c == c && state.m == m && state.margin.equals(margin);
     }
 
 }

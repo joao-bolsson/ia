@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Objects;
+
 /**
  *
  * @author João Bolsson (jvmarques@inf.ufsm.br)
@@ -61,6 +63,28 @@ public class Boat {
     @Override
     public String toString() {
         return "<" + m + ", " + c + ">";
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 79;
+        hash = 18 * hash + Objects.hashCode(this.c);
+        hash = 86 * hash + Objects.hashCode(this.m);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(final Object obj) {
+        if (!(obj instanceof Boat)) {
+            return false;
+        }
+        if (obj == this) {
+            return true;
+        }
+
+        Boat boat = (Boat) obj;
+
+        return boat.c == c && boat.m == m;
     }
 
 }

@@ -1,7 +1,9 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 /**
  *
@@ -41,11 +43,27 @@ public class Main {
     }
 
     private void run() {
-        Node root = new Node(initialState, null);
+        Vertice init = new Vertice(initialState, null);
 
-        root.init();
-        root.initChilds();
-        root.print(0, null);
+        // add initial state
+        Graph graph = new Graph();
+        graph.addVertice(init);
+
+        Iterator<Map.Entry<Boat, Vertice>> it = init.getNeighbors().entrySet().iterator();
+
+        while (it.hasNext()) {
+            Map.Entry<Boat, Vertice> next = it.next();
+
+            Vertice vertice = next.getValue();
+            graph.addEdge(new Edge(next.getKey(), vertice.getParent(), vertice));
+        }
+
+        List<Edge> edges = graph.getEdges();
+
+        for (Edge e : edges) {
+            System.out.println(e.getOrigin() + "__" + e.getBoat() + "__" + e.getDest());
+        }
+
     }
 
     /**
