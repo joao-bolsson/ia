@@ -58,7 +58,7 @@ public class Node extends State {
         }
         OPENED.add(this);
         // checks if this node is valid (root case)
-        if (!isValid() || A == B) {
+        if (!isValid()) {
             return;
         }
 
