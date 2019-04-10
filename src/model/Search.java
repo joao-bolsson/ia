@@ -49,6 +49,11 @@ public class Search {
 
             System.out.println("encontrou! " + stack);
 
+            System.out.println("---- ESTADOS ----");
+            for (Edge e : stackEdge) {
+                System.out.println(e.getBoat());
+            }
+
             return;
         }
 
@@ -58,17 +63,15 @@ public class Search {
             edge.setVisited(true);
             stackEdge.add(edge);
         }
-        System.out.println("empilhou: " + v);
 
         List<Edge> edges = g.getEdges(v);
 
         for (Edge e : edges) {
             boolean mustVisit = true;
 
+            // don't visit the previous node
             if (edge != null) {
-
                 mustVisit = !e.getDest().equals(edge.getOrigin());
-//                System.out.println(e.getDest() + " ori: " + edge.getOrigin());
             }
 
             if (!e.isVisited() && mustVisit) {
