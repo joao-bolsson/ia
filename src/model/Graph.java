@@ -12,12 +12,12 @@ import java.util.Map;
  */
 public class Graph {
 
-    private final Vertice first;
+    private final Vertex first;
 
     private final List<Edge> edges = new ArrayList<>();
-    private final List<Vertice> vertices = new ArrayList<>();
+    private final List<Vertex> vertices = new ArrayList<>();
 
-    public Graph(final Vertice first) {
+    public Graph(final Vertex first) {
         this.first = first;
     }
 
@@ -25,7 +25,7 @@ public class Graph {
         return edges;
     }
 
-    public List<Vertice> getVertices() {
+    public List<Vertex> getVertices() {
         return vertices;
     }
 
@@ -33,29 +33,40 @@ public class Graph {
         add(first);
     }
 
-    private void add(final Vertice v) {
+    private void add(final Vertex v) {
         if (!vertices.contains(v) && v != null) {
             vertices.add(v);
 
-            Iterator<Map.Entry<Boat, Vertice>> iterator = v.getNeighbors().entrySet().iterator();
+            Iterator<Map.Entry<Boat, Vertex>> iterator = v.getNeighbors().entrySet().iterator();
 
-            System.out.println("adiciona filhos do " + v);
             while (iterator.hasNext()) {
-                Map.Entry<Boat, Vertice> next = iterator.next();
+                Map.Entry<Boat, Vertex> next = iterator.next();
 
-                Vertice child = next.getValue();
-
-                System.out.println("filho adc: " + child);
+                Vertex child = next.getValue();
 
                 Edge edge = new Edge(next.getKey(), v, child);
                 if (!edges.contains(edge)) {
-                    System.out.println("adciona edge: " + edge);
                     edges.add(edge);
-                } else {
-                    System.out.println("jah contem edge: " + edge);
                 }
                 add(child);
             }
         }
+    }
+
+    /**
+     * Gets all edges that contains given paramater as origin.
+     *
+     * @param origin Given origin
+     * @return A list with all valid edges.
+     */
+    public List<Edge> getEdges(final Vertex origin) {
+        List<Edge> list = new ArrayList<>();
+
+        for (Edge e : edges) {
+            if (e.getOrigin().equals(origin)) {
+                list.add(e);
+            }
+        }
+        return list;
     }
 }

@@ -41,14 +41,20 @@ public class Main {
     }
 
     private boolean test() {
-        Vertice root = new Vertice(new State(3, 3, State.Margin.Left));
+        Vertex root = new Vertex(new State(3, 3, State.Margin.Left));
 
-        Vertice child = new Vertice(0, 2, State.Margin.Right);
+        Vertex child = new Vertex(0, 2, State.Margin.Right);
 
         Edge a = new Edge(new Boat(0, 2), root, child);
         Edge b = new Edge(new Boat(0, 2), child, root);
 
-        return !a.equals(b);
+        return !a.equals(b) && testVertex();
+    }
+
+    private boolean testVertex() {
+        Vertex vertex = new Vertex(finalState);
+
+        return vertex.equals(finalState);
     }
 
     private void run() {
@@ -57,24 +63,25 @@ public class Main {
             return;
         }
 
-        Vertice init = new Vertice(initialState);
+        Vertex init = new Vertex(initialState);
 
         // add initial state
         Graph graph = new Graph(init);
         graph.build();
 
-        List<Edge> edges = graph.getEdges();
-
-        for (Edge e : edges) {
-            System.out.println(e);
-        }
-
-        List<Vertice> vertices = graph.getVertices();
-
-        for (Vertice v : vertices) {
-            System.out.println(v);
-        }
-
+//        List<Edge> edges = graph.getEdges();
+//
+//        for (Edge e : edges) {
+//            System.out.println(e);
+//        }
+//
+//        List<Vertex> vertices = graph.getVertices();
+//
+//        for (Vertex v : vertices) {
+//            System.out.println(v);
+//        }
+        Search search = new Search(graph);
+        search.deepSearch(init, finalState);
     }
 
     /**

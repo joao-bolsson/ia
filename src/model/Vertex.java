@@ -2,24 +2,23 @@ package model;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Objects;
 
 /**
  *
  * @author João Bolsson (jvmarques@inf.ufsm.br)
  * @version 2019, Apr 10.
  */
-public class Vertice extends State {
+public class Vertex extends State {
 
     private boolean visited = false;
 
-    private final Map<Boat, Vertice> neighbors = new HashMap<>();
+    private final Map<Boat, Vertex> neighbors = new HashMap<>();
 
-    public Vertice(final State state) {
+    public Vertex(final State state) {
         super(state.m, state.c, state.margin);
     }
 
-    public Vertice(final int m, final int c, final Margin margin) {
+    public Vertex(final int m, final int c, final Margin margin) {
         super(m, c, margin);
     }
 
@@ -31,10 +30,10 @@ public class Vertice extends State {
         return visited;
     }
 
-    public Map<Boat, Vertice> getNeighbors() {
+    public Map<Boat, Vertex> getNeighbors() {
         if (neighbors.isEmpty()) {
             for (Boat boat : Main.VALID_BOATS) {
-                Vertice child = canApplyOperator(boat);
+                Vertex child = canApplyOperator(boat);
                 if (child != null) {
                     neighbors.put(boat, child);
                 }
@@ -44,8 +43,8 @@ public class Vertice extends State {
         return neighbors;
     }
 
-    public Vertice canApplyOperator(final Boat boat) {
-        Vertice currentNode = new Vertice(this);
+    public Vertex canApplyOperator(final Boat boat) {
+        Vertex currentNode = new Vertex(this);
 
         currentNode.m -= boat.getM();
         currentNode.c -= boat.getC();
@@ -56,7 +55,7 @@ public class Vertice extends State {
 
         Margin otherMargin = margin.equals(Margin.Left) ? Margin.Right : Margin.Left;
 
-        Vertice otherNode = new Vertice(otherM, otherC, otherMargin);
+        Vertex otherNode = new Vertex(otherM, otherC, otherMargin);
         otherNode.m += boat.getM();
         otherNode.c += boat.getC();
 
@@ -64,29 +63,6 @@ public class Vertice extends State {
             return otherNode;
         }
         return null;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 77;
-        hash = 29 * hash + Objects.hashCode(this.c);
-        hash = 29 * hash + Objects.hashCode(this.m);
-        hash = 29 * hash + Objects.hashCode(this.margin);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(final Object obj) {
-        if (!(obj instanceof Vertice)) {
-            return false;
-        }
-        if (obj == this) {
-            return true;
-        }
-
-        Vertice vertice = (Vertice) obj;
-
-        return !(vertice.c != c || vertice.m != m || !vertice.margin.equals(margin));
     }
 
 }

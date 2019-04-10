@@ -10,11 +10,11 @@ import java.util.Objects;
 public class Edge {
 
     private final Boat boat;
-    private final Vertice origin;
-    private final Vertice dest;
+    private final Vertex origin;
+    private final Vertex dest;
     private boolean visited = false;
 
-    public Edge(final Boat value, final Vertice origin, final Vertice dest) {
+    public Edge(final Boat value, final Vertex origin, final Vertex dest) {
         this.boat = value;
         this.origin = origin;
         this.dest = dest;
@@ -24,11 +24,11 @@ public class Edge {
         return visited;
     }
 
-    public Vertice getOrigin() {
+    public Vertex getOrigin() {
         return origin;
     }
 
-    public Vertice getDest() {
+    public Vertex getDest() {
         return dest;
     }
 
