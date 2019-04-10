@@ -1,7 +1,9 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -14,6 +16,8 @@ public class Node extends State {
     private final Node parent;
 
     private final Map<Boat, Node> childs;
+
+    private static final List<Node> OPENED = new ArrayList<>();
 
     /**
      * Creates a node.
@@ -48,10 +52,16 @@ public class Node extends State {
      * Builds the node with children.
      */
     public void init() {
+        if (OPENED.contains(this)) {
+            System.out.println("ja foi aberto" + this);
+            return;
+        }
+        OPENED.add(this);
         // checks if this node is valid (root case)
         if (!isValid() || A == B) {
             return;
         }
+
         for (Boat boat : Main.VALID_BOATS) {
             Node result = canApplyOperator(boat);
             if (result != null) {
@@ -77,8 +87,7 @@ public class Node extends State {
 
         Margin otherMargin = margin.equals(Margin.Left) ? Margin.Right : Margin.Left;
 
-        // TODO: parent de otherNode pode ser currentNode ou um novo node? revisar
-        Node otherNode = new Node(otherM, otherC, otherMargin, new Node(this, parent));
+        Node otherNode = new Node(otherM, otherC, otherMargin, this);
         otherNode.m += boat.getM();
         otherNode.c += boat.getC();
 
