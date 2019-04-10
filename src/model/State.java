@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Objects;
+
 /**
  *
  * @author João Bolsson (jvmarques@inf.ufsm.br)
@@ -29,7 +31,7 @@ public class State {
 
     }
 
-    protected final int m, c;
+    protected int m, c;
     protected final Margin margin;
 
     /**
@@ -52,7 +54,10 @@ public class State {
      * @return If number of missionaries is equals or greater than cannibals - true, else - false.
      */
     public boolean isValid() {
-        return m >= c;
+        if (m < 0 || c < 0) {
+            return false;
+        }
+        return m >= c || m == 0;
     }
 
     /**
@@ -65,6 +70,29 @@ public class State {
     @Override
     public String toString() {
         return "<" + m + ", " + c + ", " + margin + ">";
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 39;
+        hash = 86 * hash + Objects.hashCode(this.c);
+        hash = 86 * hash + Objects.hashCode(this.m);
+        hash = 86 * hash + Objects.hashCode(this.margin);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(final Object obj) {
+        if (!(obj instanceof State)) {
+            return false;
+        }
+        if (obj == this) {
+            return true;
+        }
+
+        State state = (State) obj;
+
+        return !(state.c != c || state.m != m || !state.margin.equals(margin));
     }
 
 }

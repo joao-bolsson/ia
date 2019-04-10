@@ -32,6 +32,9 @@ public class Boat {
      * @return If the number of missionaries is the boat is equals or greater than cannibals - true, else - false.
      */
     public boolean isValid() {
+        if (m < 0 || c < 0) {
+            return false;
+        }
         if (m + c > 0 && m + c <= MAX) {
             if (m == 0) {
                 return true;

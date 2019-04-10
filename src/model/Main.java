@@ -10,7 +10,7 @@ import java.util.List;
  */
 public class Main {
 
-    private static final byte M_INIT = 3, C_INIT = 3;
+    public static final byte M_INIT = 3, C_INIT = 3;
     private static final State.Margin INITIAL_MARGIN = State.Margin.Left;
 
     private final State initialState, finalState;
@@ -41,13 +41,11 @@ public class Main {
     }
 
     private void run() {
-        System.out.println("valid boats:");
-        for (Boat b : VALID_BOATS) {
-            System.out.println(b);
-        }
+        Node root = new Node(initialState, null);
 
-        Node root = new Node(initialState);
         root.init();
+        root.initChilds();
+        root.print(0, null);
     }
 
     /**
