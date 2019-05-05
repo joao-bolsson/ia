@@ -95,6 +95,19 @@ public class Point {
         }
     }
 
+    /**
+     * Returns the distance between this point and a given point.
+     *
+     * @param p Given point.
+     * @return Distance between points.
+     */
+    public double distance(final Point p) {
+        if (p != null) {
+            return Math.sqrt(Math.pow(x - p.x, 2) + Math.pow(y - p.y, 2) + Math.pow(z - p.z, 2));
+        }
+        return 0;
+    }
+
     @Override
     public int hashCode() {
         int hash = 5;

@@ -10,8 +10,8 @@ import model.Point;
  */
 public class Main {
 
-    private static final byte DIMENSION = 3;
-    private static final float BLOCKED = 0.1f;
+    private static final byte DIMENSION = 5;
+    private static final float BLOCKED = 0.3f;
 
     /**
      * Main function.
@@ -20,7 +20,7 @@ public class Main {
      */
     public static void main(final String[] args) {
         Grid grid = new Grid(DIMENSION, BLOCKED);
-        grid.lookPath(new Point(0, 0, 0), new Point(DIMENSION, DIMENSION, DIMENSION));
+        grid.lookPath(new Point(0, 0, 0), new Point(DIMENSION - 1, DIMENSION - 1, DIMENSION - 1));
     }
 
 }
