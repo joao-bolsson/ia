@@ -75,6 +75,8 @@ public class Grid extends Seeker {
         }
 
         indexesBlocked.add(rand);
+
+        points.get(rand).setBlocked(true);
         p.setBlocked(false);
 
         int indexOf = points.indexOf(p);
