@@ -11,7 +11,7 @@ import java.util.Map;
  * @author João Bolsson (jvmarques@inf.ufsm.br)
  * @version 2019, May 05.
  */
-public class Seeker {
+public abstract class Seeker {
 
     /**
      * Unit to measure the distance between two sequential points.
@@ -51,6 +51,14 @@ public class Seeker {
     }
 
     /**
+     * Avoid start or end point blocked.
+     *
+     * @param start Start point.
+     * @param end End point.
+     */
+    protected abstract void resolveBlocked(final Point start, final Point end);
+
+    /**
      * Gets the given point copy on the grid.
      *
      * @param p Given point.
@@ -71,7 +79,7 @@ public class Seeker {
      */
     public void lookPath(final Point start, final Point end) {
         if (start == null || end == null) {
-            System.out.println("Erro: esperados dois valores não nulos");
+            System.out.println("Erro: dois valores não nulos são esperados");
             return;
         }
 
@@ -83,10 +91,12 @@ public class Seeker {
         Point startP = getPoint(start);
         Point endP = getPoint(end);
 
-        if (startP.isBlocked() || endP.isBlocked()) {
-            System.out.println("Os pontos de inicio e fim não estão todos livres (estão bloqueados)");
+        if (startP.equals(endP)) {
+            System.out.println("O ponto inicial é igual ao final");
             return;
         }
+
+        resolveBlocked(start, end);
 
         this.end = endP;
 
@@ -114,12 +124,12 @@ public class Seeker {
         visited.add(p);
 
         // gets the neighbors of the point
-        Point top = new Point(p.getX(), p.getY() + 1, p.getZ());
-        Point bottom = new Point(p.getX(), p.getY() - 1, p.getZ());
-        Point front = new Point(p.getX(), p.getY(), p.getZ() + 1);
-        Point back = new Point(p.getX(), p.getY(), p.getZ() - 1);
-        Point left = new Point(p.getX() - 1, p.getY(), p.getZ());
-        Point right = new Point(p.getX() + 1, p.getY(), p.getZ());
+        Point top = new Point(p.getX(), p.getY() + UNIT, p.getZ());
+        Point bottom = new Point(p.getX(), p.getY() - UNIT, p.getZ());
+        Point front = new Point(p.getX(), p.getY(), p.getZ() + UNIT);
+        Point back = new Point(p.getX(), p.getY(), p.getZ() - UNIT);
+        Point left = new Point(p.getX() - UNIT, p.getY(), p.getZ());
+        Point right = new Point(p.getX() + UNIT, p.getY(), p.getZ());
 
         List<Point> candidates = Arrays.asList(top, bottom, front, back, left, right);
         for (Point point : candidates) {
