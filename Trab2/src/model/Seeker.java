@@ -34,8 +34,6 @@ public abstract class Seeker {
      */
     private final Map<String, Point> targets = new HashMap<>();
 
-    private int targetsSize = 0;
-
     private int totalSamples = 0;
 
     /**
@@ -71,7 +69,6 @@ public abstract class Seeker {
         targets.clear();
         visited.clear();
 
-        targetsSize = 0;
         end = null;
 
         for (Point p : points) {
@@ -116,7 +113,6 @@ public abstract class Seeker {
         this.end = endP;
 
         targets.put(startP.getKey(), startP);
-        targetsSize = 1;
 
         long startTime = System.nanoTime();
         boolean look = look(startP);
@@ -145,18 +141,14 @@ public abstract class Seeker {
         if (p == null) {
             return false;
         }
-        if (targetsSize == 0) {
+        if (targets.isEmpty()) {
             return false;
         }
         if (p.equals(end)) {
             return true;
         }
 
-        Point remove = targets.remove(p.getKey()); // remove the point from targets
-
-        if (remove != null) {
-            targetsSize--;
-        }
+        targets.remove(p.getKey()); // remove the point from targets
         // only expand neighbors for point that was not expanded yet
         if (!p.isVisited()) {
             expandPoint(p); // expand point neighbors
@@ -194,7 +186,6 @@ public abstract class Seeker {
             if (neighbor != null && !neighbor.isBlocked() && !neighbor.isVisited()) {
                 p.addNeighbor(neighbor);
                 targets.put(neighbor.getKey(), neighbor);
-                targetsSize++;
             }
         }
     }
