@@ -18,6 +18,8 @@ public class Point {
 
     private final List<Point> neighbors = new ArrayList<>();
 
+    private final String key;
+
     /**
      * Creates a 3D point.
      *
@@ -29,6 +31,8 @@ public class Point {
         this.x = x;
         this.y = y;
         this.z = z;
+
+        key = "P(" + x + ", " + y + ", " + z + ")";
     }
 
     /**
@@ -90,9 +94,14 @@ public class Point {
      * @param p Neighbor point.
      */
     public void addNeighbor(final Point p) {
-        if (!neighbors.contains(p)) {
-            neighbors.add(p);
-        }
+        neighbors.add(p);
+    }
+
+    /**
+     * @return The point neighbors.
+     */
+    public List<Point> getNeighbors() {
+        return neighbors;
     }
 
     /**
@@ -146,15 +155,15 @@ public class Point {
      * @return The unique key for this point.
      */
     public String getKey() {
-        return "P(" + x + ", " + y + ", " + z + ")";
+        return key;
     }
 
     @Override
     public String toString() {
         if (blocked) {
-            return getKey() + " blocked";
+            return key + " blocked";
         }
-        return getKey();
+        return key;
     }
 
 }

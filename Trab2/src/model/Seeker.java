@@ -31,7 +31,9 @@ public abstract class Seeker {
     /**
      * List with points to look.
      */
-    private final List<Point> targets = new ArrayList<>();
+    private final Map<String, Point> targets = new HashMap<>();
+
+    private int targetsSize = 0;
 
     /**
      * Visited points.
@@ -65,10 +67,7 @@ public abstract class Seeker {
      * @return The point on the grid that represents the given point.
      */
     private Point getPoint(final Point p) {
-        if (points.contains(p)) {
-            return map.get(p.getKey());
-        }
-        return null;
+        return map.get(p.getKey());
     }
 
     /**
@@ -96,14 +95,18 @@ public abstract class Seeker {
             return;
         }
 
-        resolveBlocked(start, end);
+        resolveBlocked(startP, endP);
+
+        System.out.println("================================================================================");
+        System.out.println("start: " + startP + " end: " + endP);
 
         this.end = endP;
 
         targets.clear();
         visited.clear();
 
-        targets.add(startP);
+        targets.put(startP.getKey(), startP);
+        targetsSize = 1;
 
         long startTime = System.currentTimeMillis();
         look(startP);
@@ -113,6 +116,9 @@ public abstract class Seeker {
 
     private void look(final Point p) {
         if (p == null) {
+            return;
+        }
+        if (targetsSize == 0) {
             System.out.println("path not found");
             return;
         }
@@ -122,59 +128,93 @@ public abstract class Seeker {
             return;
         }
 
-        targets.remove(p); // remove the point from targets
+        Point remove = targets.remove(p.getKey()); // remove the point from targets
+
+        if (remove != null) {
+            targetsSize--;
+        }
+        // only expand neighbors for point that was not expanded yet
+        if (!p.isVisited()) {
+            // gets the neighbors of the point
+            Point top = new Point(p.getX(), p.getY() + UNIT, p.getZ());
+            Point bottom = new Point(p.getX(), p.getY() - UNIT, p.getZ());
+            Point front = new Point(p.getX(), p.getY(), p.getZ() + UNIT);
+            Point back = new Point(p.getX(), p.getY(), p.getZ() - UNIT);
+            Point left = new Point(p.getX() - UNIT, p.getY(), p.getZ());
+            Point right = new Point(p.getX() + UNIT, p.getY(), p.getZ());
+
+            List<Point> candidates = Arrays.asList(top, bottom, front, back, left, right);
+            for (Point point : candidates) {
+                Point neighbor = getPoint(point);
+
+                if (neighbor != null && !neighbor.isBlocked() && !neighbor.isVisited()) {
+                    p.addNeighbor(neighbor);
+                    targets.put(neighbor.getKey(), neighbor);
+                    targetsSize++;
+                }
+            }
+        }
 
         p.setVisited(true);
         visited.add(p);
 
-        // gets the neighbors of the point
-        Point top = new Point(p.getX(), p.getY() + UNIT, p.getZ());
-        Point bottom = new Point(p.getX(), p.getY() - UNIT, p.getZ());
-        Point front = new Point(p.getX(), p.getY(), p.getZ() + UNIT);
-        Point back = new Point(p.getX(), p.getY(), p.getZ() - UNIT);
-        Point left = new Point(p.getX() - UNIT, p.getY(), p.getZ());
-        Point right = new Point(p.getX() + UNIT, p.getY(), p.getZ());
-
-        List<Point> candidates = Arrays.asList(top, bottom, front, back, left, right);
-        for (Point point : candidates) {
-            Point neighbor = getPoint(point);
-
-            if (neighbor != null && !neighbor.isBlocked() && !neighbor.isVisited() && !targets.contains(neighbor)) {
-                p.addNeighbor(neighbor);
-                targets.add(neighbor);
-            }
-        }
-
         Point bestPoint = getBestPoint(p);
 
-        look(bestPoint);
+        if (bestPoint == null) { // no valid neighbor to visit
+            visited.remove(p);
+            Point lastVisited = getLastVisited();
+
+            if (lastVisited != null) {
+                look(lastVisited);
+            } else {
+                System.out.println("path not found");
+            }
+        } else {
+            look(bestPoint);
+        }
+    }
+
+    private Point getLastVisited() {
+        if (!visited.isEmpty()) {
+            return visited.get(visited.size() - 1);
+        }
+        return null;
     }
 
     /**
-     * Gets the best point to be visited.
+     * Gets the best point to be visited. The returned point is neighbor of given point.
      *
+     * @param point Point with neighbors to look for.
      * @return The best point to visit by heuristic function.
      */
-    private Point getBestPoint(final Point p) {
-        if (!targets.isEmpty()) {
-            Point best = targets.get(0);
+    private Point getBestPoint(final Point point) {
+        List<Point> neighbors = point.getNeighbors();
+
+        if (!neighbors.isEmpty()) {
+            Point best = neighbors.get(0);
 
             int distance = visited.size() * UNIT; // g(n)
             double bestDistance = distance + end.distance(best); // f(n) = g(n) + h(n)
 
-            if (targets.size() > 1) {
-                for (int i = 1; i < targets.size(); i++) {
-                    Point point = targets.get(i);
-                    double d = distance + end.distance(point);
+            if (neighbors.size() > 1) {
+                for (int i = 1; i < neighbors.size(); i++) {
+                    Point p = neighbors.get(i);
 
-                    if (d < bestDistance) {
-                        bestDistance = d;
-                        best = point;
+                    if (!p.isVisited()) {
+                        double d = distance + end.distance(p);
+
+                        if (d < bestDistance) {
+                            bestDistance = d;
+                            best = p;
+                        }
                     }
                 }
+            } else if (best.isVisited()) {
+                return null;
             }
             return best;
         }
+        // no valid neighbor
         return null;
     }
 

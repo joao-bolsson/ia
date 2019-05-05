@@ -11,7 +11,7 @@ import model.Point;
 public class Main {
 
     private static final byte DIMENSION = 5;
-    private static final float BLOCKED = 0.3f;
+    private static final float BLOCKED = 0f;
 
     /**
      * Main function.
@@ -32,10 +32,9 @@ public class Main {
                 end = grid.getRandomPoint();
             }
 
-            System.out.println("================");
-            System.out.println("start: " + start + " end: " + end);
             grid.lookPath(start, end);
             start = end = null;
+            System.gc();
         }
     }
 
