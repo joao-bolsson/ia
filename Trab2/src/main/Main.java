@@ -10,6 +10,7 @@ import model.Point;
  */
 public class Main {
 
+    private static final short PATHS = 500;
     private static final byte DIMENSION = 5;
     private static final float BLOCKED = 0f;
 
@@ -22,18 +23,26 @@ public class Main {
         Grid grid = new Grid(DIMENSION, BLOCKED);
 
         Point start = null, end = null;
-        for (int i = 0; i < 50; i++) {
+        for (int i = 0; i < PATHS; i++) {
             while (start == null) {
                 start = grid.getRandomPoint();
             }
             while (end == null || start.equals(end)) {
                 end = grid.getRandomPoint();
             }
-            System.out.println("================================================================================");
-            System.out.println("start: " + start + " end: " + end);
             grid.lookPath(start, end);
             start = end = null;
         }
+
+        System.out.println("===============================");
+        System.out.println("RELATÓRIO");
+        System.out.println("===============================");
+
+        System.out.println(grid);
+
+        System.out.println("--------------------------------");
+        System.out.println("number of analysed paths: " + PATHS);
+        System.out.println("valid paths: " + grid.getTotalSamples());
 
     }
 

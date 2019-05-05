@@ -36,10 +36,14 @@ public abstract class Seeker {
 
     private int targetsSize = 0;
 
+    private int totalSamples = 0;
+
     /**
      * Visited points.
      */
     private final List<Point> visited = new ArrayList<>();
+
+    private final Reporter report = new Reporter();
 
     /**
      * Object point. (final state)
@@ -102,6 +106,9 @@ public abstract class Seeker {
             return;
         }
 
+        System.out.println("================================================================================");
+        System.out.println("start: " + start + " end: " + end);
+
         Point startP = getPoint(start);
         Point endP = getPoint(end);
 
@@ -113,23 +120,37 @@ public abstract class Seeker {
         targetsSize = 1;
 
         long startTime = System.currentTimeMillis();
-        look(startP);
+        boolean look = look(startP);
         long endTime = System.currentTimeMillis();
+        if (look) {
+            System.out.println("path: " + visited);
+            int distance = visited.size() * UNIT;
+            System.out.println("distance: " + distance);
+            report.addSample(distance, endTime - startTime);
+            totalSamples++;
+        } else {
+            System.out.println("path not found");
+        }
+
         System.out.println("time: " + (endTime - startTime) + "ms");
     }
 
-    private void look(final Point p) {
+    /**
+     * @return The number of samples analyzed.
+     */
+    public int getTotalSamples() {
+        return totalSamples;
+    }
+
+    private boolean look(final Point p) {
         if (p == null) {
-            return;
+            return false;
         }
         if (targetsSize == 0) {
-            System.out.println("path not found");
-            return;
+            return false;
         }
         if (p.equals(end)) {
-            System.out.println("path: " + visited);
-            System.out.println("distance: " + (visited.size() * UNIT));
-            return;
+            return true;
         }
 
         Point remove = targets.remove(p.getKey()); // remove the point from targets
@@ -150,15 +171,13 @@ public abstract class Seeker {
         if (bestPoint == null) { // no valid neighbor to visit
             visited.remove(p);
             Point lastVisited = getLastVisited();
-
-            if (lastVisited != null) {
-                look(lastVisited);
-            } else {
-                System.out.println("path not found");
+            if (lastVisited == null) {
+                return false;
             }
-        } else {
-            look(bestPoint);
+
+            bestPoint = lastVisited;
         }
+        return look(bestPoint);
     }
 
     private void expandPoint(final Point p) {
@@ -223,6 +242,11 @@ public abstract class Seeker {
         }
         // no valid neighbor
         return null;
+    }
+
+    @Override
+    public String toString() {
+        return report.toString();
     }
 
 }
