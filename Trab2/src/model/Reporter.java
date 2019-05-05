@@ -60,9 +60,12 @@ public class Reporter {
 
             Integer samples = distanceSamplesNumber.get(distance);
 
-            builder.append("------------------------------------\n");
-            builder.append("distance: ").append(distance).append(" samples: ").append(samples).append("\n");
-            builder.append("average time: ").append(totalTime / samples).append("\n");
+            if (samples >= 50) {
+                builder.append("------------------------------------\n");
+                builder.append("distance: ").append(distance).append(" samples: ").append(samples).append("\n");
+                builder.append("total time: ").append(totalTime).append("\n");
+                builder.append("average time: ").append(((double) totalTime) / samples).append("\n");
+            }
         }
 
         return builder.toString();

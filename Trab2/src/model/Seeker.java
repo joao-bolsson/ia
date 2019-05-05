@@ -106,9 +106,8 @@ public abstract class Seeker {
             return;
         }
 
-        System.out.println("================================================================================");
-        System.out.println("start: " + start + " end: " + end);
-
+//        System.out.println("================================================================================");
+//        System.out.println("start: " + start + " end: " + end);
         Point startP = getPoint(start);
         Point endP = getPoint(end);
 
@@ -119,20 +118,20 @@ public abstract class Seeker {
         targets.put(startP.getKey(), startP);
         targetsSize = 1;
 
-        long startTime = System.currentTimeMillis();
+        long startTime = System.nanoTime();
         boolean look = look(startP);
-        long endTime = System.currentTimeMillis();
+        long endTime = System.nanoTime();
         if (look) {
-            System.out.println("path: " + visited);
+//            System.out.println("path: " + visited);
             int distance = visited.size() * UNIT;
-            System.out.println("distance: " + distance);
+//            System.out.println("distance: " + distance);
             report.addSample(distance, endTime - startTime);
             totalSamples++;
-        } else {
-            System.out.println("path not found");
-        }
 
-        System.out.println("time: " + (endTime - startTime) + "ms");
+//            System.out.println("time: " + (endTime - startTime) + "ns");
+        } else {
+//            System.out.println("path not found");
+        }
     }
 
     /**

@@ -10,8 +10,8 @@ import model.Point;
  */
 public class Main {
 
-    private static final short PATHS = 500;
-    private static final byte DIMENSION = 5;
+    private static final short PATHS = 2500;
+    private static final byte DIMENSION = 20;
     private static final float BLOCKED = 0f;
 
     /**
