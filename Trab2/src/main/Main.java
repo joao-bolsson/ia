@@ -22,20 +22,19 @@ public class Main {
         Grid grid = new Grid(DIMENSION, BLOCKED);
 
         Point start = null, end = null;
-
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 50; i++) {
             while (start == null) {
                 start = grid.getRandomPoint();
             }
-
             while (end == null || start.equals(end)) {
                 end = grid.getRandomPoint();
             }
-
+            System.out.println("================================================================================");
+            System.out.println("start: " + start + " end: " + end);
             grid.lookPath(start, end);
             start = end = null;
-            System.gc();
         }
+
     }
 
 }

@@ -2,6 +2,7 @@ package model;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -53,14 +54,6 @@ public abstract class Seeker {
     }
 
     /**
-     * Avoid start or end point blocked.
-     *
-     * @param start Start point.
-     * @param end End point.
-     */
-    protected abstract void resolveBlocked(final Point start, final Point end);
-
-    /**
      * Gets the given point copy on the grid.
      *
      * @param p Given point.
@@ -68,6 +61,23 @@ public abstract class Seeker {
      */
     private Point getPoint(final Point p) {
         return map.get(p.getKey());
+    }
+
+    private void reset() {
+        targets.clear();
+        visited.clear();
+
+        targetsSize = 0;
+        end = null;
+
+        for (Point p : points) {
+            p.setVisited(false);
+        }
+
+        Collection<Point> values = map.values();
+        for (Point p : values) {
+            p.setVisited(false);
+        }
     }
 
     /**
@@ -87,23 +97,17 @@ public abstract class Seeker {
             return;
         }
 
-        Point startP = getPoint(start);
-        Point endP = getPoint(end);
-
-        if (startP.equals(endP)) {
+        if (start.equals(end)) {
             System.out.println("O ponto inicial é igual ao final");
             return;
         }
 
-        resolveBlocked(startP, endP);
+        Point startP = getPoint(start);
+        Point endP = getPoint(end);
 
-        System.out.println("================================================================================");
-        System.out.println("start: " + startP + " end: " + endP);
+        reset();
 
         this.end = endP;
-
-        targets.clear();
-        visited.clear();
 
         targets.put(startP.getKey(), startP);
         targetsSize = 1;
@@ -122,7 +126,7 @@ public abstract class Seeker {
             System.out.println("path not found");
             return;
         }
-        if (end.equals(p)) {
+        if (p.equals(end)) {
             System.out.println("path: " + visited);
             System.out.println("distance: " + (visited.size() * UNIT));
             return;
@@ -135,24 +139,7 @@ public abstract class Seeker {
         }
         // only expand neighbors for point that was not expanded yet
         if (!p.isVisited()) {
-            // gets the neighbors of the point
-            Point top = new Point(p.getX(), p.getY() + UNIT, p.getZ());
-            Point bottom = new Point(p.getX(), p.getY() - UNIT, p.getZ());
-            Point front = new Point(p.getX(), p.getY(), p.getZ() + UNIT);
-            Point back = new Point(p.getX(), p.getY(), p.getZ() - UNIT);
-            Point left = new Point(p.getX() - UNIT, p.getY(), p.getZ());
-            Point right = new Point(p.getX() + UNIT, p.getY(), p.getZ());
-
-            List<Point> candidates = Arrays.asList(top, bottom, front, back, left, right);
-            for (Point point : candidates) {
-                Point neighbor = getPoint(point);
-
-                if (neighbor != null && !neighbor.isBlocked() && !neighbor.isVisited()) {
-                    p.addNeighbor(neighbor);
-                    targets.put(neighbor.getKey(), neighbor);
-                    targetsSize++;
-                }
-            }
+            expandPoint(p); // expand point neighbors
         }
 
         p.setVisited(true);
@@ -171,6 +158,26 @@ public abstract class Seeker {
             }
         } else {
             look(bestPoint);
+        }
+    }
+
+    private void expandPoint(final Point p) {
+        Point top = new Point(p.getX(), p.getY() + UNIT, p.getZ());
+        Point bottom = new Point(p.getX(), p.getY() - UNIT, p.getZ());
+        Point front = new Point(p.getX(), p.getY(), p.getZ() + UNIT);
+        Point back = new Point(p.getX(), p.getY(), p.getZ() - UNIT);
+        Point left = new Point(p.getX() - UNIT, p.getY(), p.getZ());
+        Point right = new Point(p.getX() + UNIT, p.getY(), p.getZ());
+
+        List<Point> candidates = Arrays.asList(top, bottom, front, back, left, right);
+        for (Point point : candidates) {
+            Point neighbor = getPoint(point);
+
+            if (neighbor != null && !neighbor.isBlocked() && !neighbor.isVisited()) {
+                p.addNeighbor(neighbor);
+                targets.put(neighbor.getKey(), neighbor);
+                targetsSize++;
+            }
         }
     }
 
@@ -200,7 +207,7 @@ public abstract class Seeker {
                 for (int i = 1; i < neighbors.size(); i++) {
                     Point p = neighbors.get(i);
 
-                    if (!p.isVisited()) {
+                    if (!p.isVisited() && !p.isBlocked()) {
                         double d = distance + end.distance(p);
 
                         if (d < bestDistance) {
@@ -209,10 +216,10 @@ public abstract class Seeker {
                         }
                     }
                 }
-            } else if (best.isVisited()) {
-                return null;
             }
-            return best;
+            if (!best.isVisited() && !best.isBlocked()) {
+                return best;
+            }
         }
         // no valid neighbor
         return null;

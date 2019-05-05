@@ -53,36 +53,6 @@ public class Grid extends Seeker {
         }
     }
 
-    @Override
-    protected void resolveBlocked(final Point start, final Point end) {
-        if (start.isBlocked()) {
-            removeBlocked(start);
-        }
-
-        if (end.isBlocked()) {
-            removeBlocked(end);
-        }
-    }
-
-    private void removeBlocked(final Point p) {
-        int size = points.size();
-        Random random = new Random();
-        int rand = random.nextInt(size);
-        while (indexesBlocked.contains(rand)) { // avoid repeated numbers
-            rand = random.nextInt(size);
-        }
-
-        indexesBlocked.add(rand);
-
-        points.get(rand).setBlocked(true);
-        p.setBlocked(false);
-
-        int indexOf = points.indexOf(p);
-        if (indexOf >= 0) {
-            indexesBlocked.remove(new Integer(indexOf));
-        }
-    }
-
     /**
      * Gets a random point from the grid.
      *
@@ -94,7 +64,12 @@ public class Grid extends Seeker {
             Random random = new Random();
             int rand = random.nextInt(size);
 
-            return points.get(rand);
+            Point point = points.get(rand);
+            while (point.isBlocked()) {
+                rand = random.nextInt(size);
+                point = points.get(rand);
+            }
+            return point;
         }
         return null;
     }
