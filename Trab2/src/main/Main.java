@@ -20,7 +20,23 @@ public class Main {
      */
     public static void main(final String[] args) {
         Grid grid = new Grid(DIMENSION, BLOCKED);
-        grid.lookPath(new Point(0, 0, 0), new Point(DIMENSION - 1, DIMENSION - 1, DIMENSION - 1));
+
+        Point start = null, end = null;
+
+        for (int i = 0; i < 10; i++) {
+            while (start == null) {
+                start = grid.getRandomPoint();
+            }
+
+            while (end == null || start.equals(end)) {
+                end = grid.getRandomPoint();
+            }
+
+            System.out.println("================");
+            System.out.println("start: " + start + " end: " + end);
+            grid.lookPath(start, end);
+            start = end = null;
+        }
     }
 
 }

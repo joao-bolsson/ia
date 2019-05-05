@@ -27,9 +27,9 @@ public class Grid extends Seeker {
 
         Random random = new Random();
         for (int i = 0; i < blockeds; i++) {
-            int rand = random.nextInt(size - 1);
+            int rand = random.nextInt(size);
             while (indexesBlocked.contains(rand)) { // avoid repeated numbers
-                rand = random.nextInt(size - 1);
+                rand = random.nextInt(size);
             }
 
             indexesBlocked.add(rand);
@@ -45,11 +45,9 @@ public class Grid extends Seeker {
                     if (indexesBlocked.contains(i)) {
                         p.setBlocked(true);
                     }
-                    i++;
                     points.add(p);
-                    map.put(p.toString(), p);
-
-                    System.out.println(p);
+                    map.put(p.getKey(), p);
+                    i++;
                 }
             }
         }
@@ -69,9 +67,9 @@ public class Grid extends Seeker {
     private void removeBlocked(final Point p) {
         int size = points.size();
         Random random = new Random();
-        int rand = random.nextInt(size - 1);
+        int rand = random.nextInt(size);
         while (indexesBlocked.contains(rand)) { // avoid repeated numbers
-            rand = random.nextInt(size - 1);
+            rand = random.nextInt(size);
         }
 
         indexesBlocked.add(rand);
@@ -81,8 +79,24 @@ public class Grid extends Seeker {
 
         int indexOf = points.indexOf(p);
         if (indexOf >= 0) {
-            indexesBlocked.remove(indexOf);
+            indexesBlocked.remove(new Integer(indexOf));
         }
+    }
+
+    /**
+     * Gets a random point from the grid.
+     *
+     * @return A random point.
+     */
+    public Point getRandomPoint() {
+        if (!points.isEmpty()) {
+            int size = points.size();
+            Random random = new Random();
+            int rand = random.nextInt(size);
+
+            return points.get(rand);
+        }
+        return null;
     }
 
 }

@@ -96,6 +96,16 @@ public class Point {
     }
 
     /**
+     * Returns if the given point is a neighbor of this point.
+     *
+     * @param p Given point to check.
+     * @return If is neighbor - true, else - false.
+     */
+    public boolean isNeighbor(final Point p) {
+        return neighbors.contains(p);
+    }
+
+    /**
      * Returns the distance between this point and a given point.
      *
      * @param p Given point.
@@ -132,9 +142,19 @@ public class Point {
         return this.x == other.x && this.y == other.y && this.z == other.z;
     }
 
+    /**
+     * @return The unique key for this point.
+     */
+    public String getKey() {
+        return "P(" + x + ", " + y + ", " + z + ")";
+    }
+
     @Override
     public String toString() {
-        return "P(" + x + ", " + y + ", " + z + ") " + (blocked ? "blocked" : "");
+        if (blocked) {
+            return getKey() + " blocked";
+        }
+        return getKey();
     }
 
 }

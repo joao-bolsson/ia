@@ -66,7 +66,7 @@ public abstract class Seeker {
      */
     private Point getPoint(final Point p) {
         if (points.contains(p)) {
-            return map.get(p.toString());
+            return map.get(p.getKey());
         }
         return null;
     }
@@ -105,7 +105,10 @@ public abstract class Seeker {
 
         targets.add(startP);
 
+        long startTime = System.currentTimeMillis();
         look(startP);
+        long endTime = System.currentTimeMillis();
+        System.out.println("time: " + (endTime - startTime) + "ms");
     }
 
     private void look(final Point p) {
@@ -115,6 +118,7 @@ public abstract class Seeker {
         }
         if (end.equals(p)) {
             System.out.println("path: " + visited);
+            System.out.println("distance: " + (visited.size() * UNIT));
             return;
         }
 
@@ -136,11 +140,12 @@ public abstract class Seeker {
             Point neighbor = getPoint(point);
 
             if (neighbor != null && !neighbor.isBlocked() && !neighbor.isVisited() && !targets.contains(neighbor)) {
+                p.addNeighbor(neighbor);
                 targets.add(neighbor);
             }
         }
 
-        Point bestPoint = getBestPoint();
+        Point bestPoint = getBestPoint(p);
 
         look(bestPoint);
     }
@@ -150,7 +155,7 @@ public abstract class Seeker {
      *
      * @return The best point to visit by heuristic function.
      */
-    private Point getBestPoint() {
+    private Point getBestPoint(final Point p) {
         if (!targets.isEmpty()) {
             Point best = targets.get(0);
 
@@ -159,11 +164,12 @@ public abstract class Seeker {
 
             if (targets.size() > 1) {
                 for (int i = 1; i < targets.size(); i++) {
-                    double d = distance + end.distance(targets.get(i));
+                    Point point = targets.get(i);
+                    double d = distance + end.distance(point);
 
                     if (d < bestDistance) {
                         bestDistance = d;
-                        best = targets.get(i);
+                        best = point;
                     }
                 }
             }
