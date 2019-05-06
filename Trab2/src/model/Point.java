@@ -1,8 +1,5 @@
 package model;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  *
  * @author João Bolsson (jvmarques@inf.ufsm.br)
@@ -15,8 +12,6 @@ public class Point {
     private boolean blocked = false;
 
     private boolean visited = false;
-
-    private final List<Point> neighbors = new ArrayList<>();
 
     private final String key;
 
@@ -86,32 +81,6 @@ public class Point {
      */
     public void setVisited(final boolean visited) {
         this.visited = visited;
-    }
-
-    /**
-     * Adds a point neighbor.
-     *
-     * @param p Neighbor point.
-     */
-    public void addNeighbor(final Point p) {
-        neighbors.add(p);
-    }
-
-    /**
-     * @return The point neighbors.
-     */
-    public List<Point> getNeighbors() {
-        return neighbors;
-    }
-
-    /**
-     * Returns if the given point is a neighbor of this point.
-     *
-     * @param p Given point to check.
-     * @return If is neighbor - true, else - false.
-     */
-    public boolean isNeighbor(final Point p) {
-        return neighbors.contains(p);
     }
 
     /**

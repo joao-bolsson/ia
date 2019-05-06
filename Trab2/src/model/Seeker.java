@@ -1,7 +1,6 @@
 package model;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
@@ -28,11 +27,6 @@ public abstract class Seeker {
      * Map to get the point needed more quickly (with a unique key).
      */
     protected final Map<String, Point> map = new HashMap<>();
-
-    /**
-     * List with points to look.
-     */
-    private final Map<String, Point> targets = new HashMap<>();
 
     private int totalSamples = 0;
 
@@ -66,7 +60,6 @@ public abstract class Seeker {
     }
 
     private void reset() {
-        targets.clear();
         visited.clear();
 
         end = null;
@@ -103,8 +96,6 @@ public abstract class Seeker {
             return;
         }
 
-//        System.out.println("================================================================================");
-//        System.out.println("start: " + start + " end: " + end);
         Point startP = getPoint(start);
         Point endP = getPoint(end);
 
@@ -112,21 +103,13 @@ public abstract class Seeker {
 
         this.end = endP;
 
-        targets.put(startP.getKey(), startP);
-
         long startTime = System.nanoTime();
         boolean look = look(startP);
         long endTime = System.nanoTime();
         if (look) {
-//            System.out.println("path: " + visited);
             int distance = visited.size() * UNIT;
-//            System.out.println("distance: " + distance);
             report.addSample(distance, endTime - startTime);
             totalSamples++;
-
-//            System.out.println("time: " + (endTime - startTime) + "ns");
-        } else {
-//            System.out.println("path not found");
         }
     }
 
@@ -141,17 +124,9 @@ public abstract class Seeker {
         if (p == null) {
             return false;
         }
-        if (targets.isEmpty()) {
-            return false;
-        }
+
         if (p.equals(end)) {
             return true;
-        }
-
-        targets.remove(p.getKey()); // remove the point from targets
-        // only expand neighbors for point that was not expanded yet
-        if (!p.isVisited()) {
-            expandPoint(p); // expand point neighbors
         }
 
         p.setVisited(true);
@@ -171,7 +146,7 @@ public abstract class Seeker {
         return look(bestPoint);
     }
 
-    private void expandPoint(final Point p) {
+    private List<Point> getNeighbors(final Point p) {
         Point top = new Point(p.getX(), p.getY() + UNIT, p.getZ());
         Point bottom = new Point(p.getX(), p.getY() - UNIT, p.getZ());
         Point front = new Point(p.getX(), p.getY(), p.getZ() + UNIT);
@@ -179,15 +154,19 @@ public abstract class Seeker {
         Point left = new Point(p.getX() - UNIT, p.getY(), p.getZ());
         Point right = new Point(p.getX() + UNIT, p.getY(), p.getZ());
 
-        List<Point> candidates = Arrays.asList(top, bottom, front, back, left, right);
+        List<Point> neighbors = new ArrayList<>();
+
+        Point[] candidates = new Point[]{top, bottom, front, back, left, right};
+
         for (Point point : candidates) {
             Point neighbor = getPoint(point);
 
             if (neighbor != null && !neighbor.isBlocked() && !neighbor.isVisited()) {
-                p.addNeighbor(neighbor);
-                targets.put(neighbor.getKey(), neighbor);
+                neighbors.add(neighbor);
             }
         }
+
+        return neighbors;
     }
 
     private Point getLastVisited() {
@@ -204,7 +183,7 @@ public abstract class Seeker {
      * @return The best point to visit by heuristic function.
      */
     private Point getBestPoint(final Point point) {
-        List<Point> neighbors = point.getNeighbors();
+        List<Point> neighbors = getNeighbors(point);
 
         if (!neighbors.isEmpty()) {
             Point best = neighbors.get(0);
@@ -216,19 +195,16 @@ public abstract class Seeker {
                 for (int i = 1; i < neighbors.size(); i++) {
                     Point p = neighbors.get(i);
 
-                    if (!p.isVisited() && !p.isBlocked()) {
-                        double d = distance + end.distance(p);
+                    double d = distance + end.distance(p);
 
-                        if (d < bestDistance) {
-                            bestDistance = d;
-                            best = p;
-                        }
+                    if (d < bestDistance) {
+                        bestDistance = d;
+                        best = p;
                     }
                 }
             }
-            if (!best.isVisited() && !best.isBlocked()) {
-                return best;
-            }
+
+            return best;
         }
         // no valid neighbor
         return null;
