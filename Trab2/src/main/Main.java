@@ -12,7 +12,7 @@ public class Main {
 
     private static final short PATHS = 2500;
     private static final byte DIMENSION = 20;
-    private static final float BLOCKED = 0.1f;
+    private static final float BLOCKED = 0.3f;
 
     /**
      * Main function.

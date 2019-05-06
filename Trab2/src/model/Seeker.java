@@ -1,10 +1,7 @@
 package model;
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  *
@@ -22,11 +19,6 @@ public abstract class Seeker {
      * All points in the grid.
      */
     protected final List<Point> points = new ArrayList<>();
-
-    /**
-     * Map to get the point needed more quickly (with a unique key).
-     */
-    protected final Map<String, Point> map = new HashMap<>();
 
     private int totalSamples = 0;
 
@@ -56,7 +48,12 @@ public abstract class Seeker {
      * @return The point on the grid that represents the given point.
      */
     private Point getPoint(final Point p) {
-        return map.get(p.getKey());
+        for (Point point : points) {
+            if (point.equals(p)) {
+                return point;
+            }
+        }
+        return null;
     }
 
     private void reset() {
@@ -65,11 +62,6 @@ public abstract class Seeker {
         end = null;
 
         for (Point p : points) {
-            p.setVisited(false);
-        }
-
-        Collection<Point> values = map.values();
-        for (Point p : values) {
             p.setVisited(false);
         }
     }
@@ -96,15 +88,12 @@ public abstract class Seeker {
             return;
         }
 
-        Point startP = getPoint(start);
-        Point endP = getPoint(end);
-
         reset();
 
-        this.end = endP;
+        this.end = end;
 
         long startTime = System.nanoTime();
-        boolean look = look(startP);
+        boolean look = look(start);
         long endTime = System.nanoTime();
         if (look) {
             int distance = visited.size() * UNIT;
@@ -129,19 +118,16 @@ public abstract class Seeker {
             return true;
         }
 
-        p.setVisited(true);
-        visited.add(p);
+        if (!p.isVisited()) {
+            p.setVisited(true);
+            visited.add(p);
+        }
 
         Point bestPoint = getBestPoint(p);
 
         if (bestPoint == null) { // no valid neighbor to visit
             visited.remove(p);
-            Point lastVisited = getLastVisited();
-            if (lastVisited == null) {
-                return false;
-            }
-
-            bestPoint = lastVisited;
+            bestPoint = getLastVisited();
         }
         return look(bestPoint);
     }

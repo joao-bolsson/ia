@@ -46,7 +46,6 @@ public class Grid extends Seeker {
                         p.setBlocked(true);
                     }
                     points.add(p);
-                    map.put(p.getKey(), p);
                     i++;
                 }
             }
