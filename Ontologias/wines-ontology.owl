@@ -1,0 +1,423 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/joao/ontologies/2019/4/untitled-ontology-4"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/joao/ontologies/2019/4/untitled-ontology-4">
+    <Prefix name="" IRI="http://www.semanticweb.org/joao/ontologies/2019/4/untitled-ontology-4"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <Literal>Uma ontologia de Vinhos Gaúchos que descreve vários tipos de vinhos do Rio Grande do Sul</Literal>
+    </Annotation>
+    <Declaration>
+        <Class IRI="#Acidity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BentoGoncalvesCity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CanelaCity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CaxiasDoSulCity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ChampagneType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#City"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Color"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CompoundType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GramadoCity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HighAcidity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HighSweetness"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LicorosoType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LightType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LowAcidity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LowSweetness"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MiddleAcidity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MiddleSweetness"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MonteBeloDoSulCity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OfTableType"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RedWine"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RoseWine"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Sweetness"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#WhiteWine"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Wine"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#WineType"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasAcidity"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasAcidityOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasCity"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasCityOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasColor"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasColorOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasSweetness"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasSweetnessOf"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#Acidity"/>
+        <Class IRI="#Wine"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BentoGoncalvesCity"/>
+        <Class IRI="#City"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CanelaCity"/>
+        <Class IRI="#City"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CaxiasDoSulCity"/>
+        <Class IRI="#City"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ChampagneType"/>
+        <Class IRI="#WineType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#City"/>
+        <Class IRI="#Wine"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Color"/>
+        <Class IRI="#Wine"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CompoundType"/>
+        <Class IRI="#WineType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GramadoCity"/>
+        <Class IRI="#City"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HighAcidity"/>
+        <Class IRI="#Acidity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HighSweetness"/>
+        <Class IRI="#Sweetness"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LicorosoType"/>
+        <Class IRI="#WineType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LightType"/>
+        <Class IRI="#WineType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LowAcidity"/>
+        <Class IRI="#Acidity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LowSweetness"/>
+        <Class IRI="#Sweetness"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MiddleAcidity"/>
+        <Class IRI="#Acidity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MiddleSweetness"/>
+        <Class IRI="#Sweetness"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MonteBeloDoSulCity"/>
+        <Class IRI="#City"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OfTableType"/>
+        <Class IRI="#WineType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RedWine"/>
+        <Class IRI="#Color"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RoseWine"/>
+        <Class IRI="#Color"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Sweetness"/>
+        <Class IRI="#Wine"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WhiteWine"/>
+        <Class IRI="#Color"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WineType"/>
+        <Class IRI="#Wine"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#Acidity"/>
+        <Class IRI="#City"/>
+        <Class IRI="#Color"/>
+        <Class IRI="#Sweetness"/>
+        <Class IRI="#WineType"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#BentoGoncalvesCity"/>
+        <Class IRI="#CanelaCity"/>
+        <Class IRI="#CaxiasDoSulCity"/>
+        <Class IRI="#GramadoCity"/>
+        <Class IRI="#MonteBeloDoSulCity"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#ChampagneType"/>
+        <Class IRI="#CompoundType"/>
+        <Class IRI="#LicorosoType"/>
+        <Class IRI="#LightType"/>
+        <Class IRI="#OfTableType"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#HighAcidity"/>
+        <Class IRI="#LowAcidity"/>
+        <Class IRI="#MiddleAcidity"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#HighSweetness"/>
+        <Class IRI="#LowSweetness"/>
+        <Class IRI="#MiddleSweetness"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#RedWine"/>
+        <Class IRI="#RoseWine"/>
+        <Class IRI="#WhiteWine"/>
+    </DisjointClasses>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasAcidity"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasAcidityOf"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasCity"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasCityOf"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasColor"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasColorOf"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasSweetness"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasSweetnessOf"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasAcidity"/>
+        <ObjectProperty IRI="#hasAcidityOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasCity"/>
+        <ObjectProperty IRI="#hasCityOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasColor"/>
+        <ObjectProperty IRI="#hasColorOf"/>
+    </InverseObjectProperties>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasAcidity"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasCity"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasColor"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasSweetness"/>
+    </FunctionalObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasAcidity"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasAcidity"/>
+            <Class IRI="#Wine"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasAcidityOf"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasAcidityOf"/>
+            <Class IRI="#Acidity"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasCity"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasCity"/>
+            <Class IRI="#Wine"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasCityOf"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasCityOf"/>
+            <Class IRI="#City"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasColor"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasColor"/>
+            <Class IRI="#Wine"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasColorOf"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasColorOf"/>
+            <Class IRI="#Color"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasSweetness"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasSweetness"/>
+            <Class IRI="#Wine"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasSweetnessOf"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasSweetnessOf"/>
+            <Class IRI="#Sweetness"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasAcidity"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasAcidity"/>
+            <Class IRI="#Acidity"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasAcidityOf"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasAcidityOf"/>
+            <Class IRI="#Wine"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasCity"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasCity"/>
+            <Class IRI="#City"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasCityOf"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasCityOf"/>
+            <Class IRI="#Wine"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasColor"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasColor"/>
+            <Class IRI="#Color"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasColorOf"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasColorOf"/>
+            <Class IRI="#Wine"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasSweetness"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasSweetness"/>
+            <Class IRI="#Sweetness"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasSweetnessOf"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasSweetnessOf"/>
+            <Class IRI="#Wine"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyRange>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
