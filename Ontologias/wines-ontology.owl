@@ -20,16 +20,10 @@
         <Class IRI="#Acidity"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#BentoGoncalvesCity"/>
+        <Class IRI="#Body"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#CanelaCity"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#CaxiasDoSulCity"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#ChampagneType"/>
+        <Class IRI="#Brand"/>
     </Declaration>
     <Declaration>
         <Class IRI="#City"/>
@@ -38,55 +32,13 @@
         <Class IRI="#Color"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#CompoundType"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#GramadoCity"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#HighAcidity"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#HighSweetness"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#LicorosoType"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#LightType"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#LowAcidity"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#LowSweetness"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#MiddleAcidity"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#MiddleSweetness"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#MonteBeloDoSulCity"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#NamedWine"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#OfTableType"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#RedWine"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#RoseWine"/>
+        <Class IRI="#Feature"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Sweetness"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#WhiteWine"/>
+        <Class IRI="#Variety"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Wine"/>
@@ -101,6 +53,18 @@
         <ObjectProperty IRI="#hasAcidityOf"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#hasBody"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasBodyOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasBrand"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasBrandOf"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#hasCity"/>
     </Declaration>
     <Declaration>
@@ -113,10 +77,22 @@
         <ObjectProperty IRI="#hasColorOf"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#hasFeature"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasFeatureOf"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#hasSweetness"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasSweetnessOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasVariety"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasVarietyOf"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasWineType"/>
@@ -124,25 +100,214 @@
     <Declaration>
         <ObjectProperty IRI="#hasWineTypeOf"/>
     </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasPrice"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasYear"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AuroraBrand"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AuroraCabernetFrancWine"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AuroraChardonnayPB"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AuroraMillesimeCS"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AuroraPBExtraBrut"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AuroraReservaChardonnay"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AuroraReservaRose"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#BageCity"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#BentoGoncalvesCity"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#BuenoParalelo"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#CamposDeCimaDaSerraCity"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#CanelaCity"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#CantoDaSereiaWine"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#CarbenetSauvignon"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#CaxiasDoSulCity"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ChampagneType"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Chardonnay"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#CompoundType"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#DemiSec"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#DifferentAndNice"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#DomPedritoCity"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#DonLaurindoEstiloWine"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#DonThomazyVictoriaCabernetWine"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Dry"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#DunamisCabernetFrancWine"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ExtraBrut"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#FullBodied"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#GramadoCity"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#HighAcidity"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#HighSweetness"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#LicorosoType"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#LightBody"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#LightToMiddleBody"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#LightType"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#LowAcidity"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#LowSweetness"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#MarcusJames"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Merlot"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#MiddleAcidity"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#MiddleBody"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#MiddleSweetness"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#MioloCuveeGiuseppe"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#MonteBeloDoSulCity"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Moscato"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#OfTableType"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#PinotNoir"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#PinotNoirPintoBandeira"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#PintoBandeiraCity"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#RARPinotNoirWine"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#RedColor"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Riesling"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#RoseColor"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SaintGermain"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SaintGermainFrisanteBranco"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SaltonAntonioNini"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Soft"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ValdugaCabernetSauvignon"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#VinheticaTerroirRouge"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#WhiteColor"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#Wine"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#hasPrice"/>
+            <Datatype abbreviatedIRI="xsd:float"/>
+        </DataSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Wine"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#hasYear"/>
+            <Datatype abbreviatedIRI="xsd:integer"/>
+        </DataSomeValuesFrom>
+    </EquivalentClasses>
     <SubClassOf>
         <Class IRI="#Acidity"/>
         <Class IRI="#Wine"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#BentoGoncalvesCity"/>
-        <Class IRI="#City"/>
+        <Class IRI="#Body"/>
+        <Class IRI="#Wine"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#CanelaCity"/>
-        <Class IRI="#City"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#CaxiasDoSulCity"/>
-        <Class IRI="#City"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#ChampagneType"/>
-        <Class IRI="#WineType"/>
+        <Class IRI="#Brand"/>
+        <Class IRI="#Wine"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#City"/>
@@ -153,119 +318,608 @@
         <Class IRI="#Wine"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#CompoundType"/>
-        <Class IRI="#WineType"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#GramadoCity"/>
-        <Class IRI="#City"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#HighAcidity"/>
-        <Class IRI="#Acidity"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#HighSweetness"/>
-        <Class IRI="#Sweetness"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#LicorosoType"/>
-        <Class IRI="#WineType"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#LightType"/>
-        <Class IRI="#WineType"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#LowAcidity"/>
-        <Class IRI="#Acidity"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#LowSweetness"/>
-        <Class IRI="#Sweetness"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#MiddleAcidity"/>
-        <Class IRI="#Acidity"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#MiddleSweetness"/>
-        <Class IRI="#Sweetness"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#MonteBeloDoSulCity"/>
-        <Class IRI="#City"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#NamedWine"/>
+        <Class IRI="#Feature"/>
         <Class IRI="#Wine"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#OfTableType"/>
-        <Class IRI="#WineType"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#RedWine"/>
-        <Class IRI="#Color"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#RoseWine"/>
-        <Class IRI="#Color"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Sweetness"/>
         <Class IRI="#Wine"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#WhiteWine"/>
-        <Class IRI="#Color"/>
+        <Class IRI="#Variety"/>
+        <Class IRI="#Wine"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#WineType"/>
         <Class IRI="#Wine"/>
     </SubClassOf>
-    <DisjointClasses>
-        <Class IRI="#Acidity"/>
+    <ClassAssertion>
+        <Class IRI="#Brand"/>
+        <NamedIndividual IRI="#AuroraBrand"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Wine"/>
+        <NamedIndividual IRI="#AuroraCabernetFrancWine"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Wine"/>
+        <NamedIndividual IRI="#AuroraChardonnayPB"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Wine"/>
+        <NamedIndividual IRI="#AuroraMillesimeCS"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Wine"/>
+        <NamedIndividual IRI="#AuroraPBExtraBrut"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Wine"/>
+        <NamedIndividual IRI="#AuroraReservaChardonnay"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Wine"/>
+        <NamedIndividual IRI="#AuroraReservaRose"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#City"/>
-        <Class IRI="#Color"/>
-        <Class IRI="#Sweetness"/>
+        <NamedIndividual IRI="#BageCity"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#City"/>
+        <NamedIndividual IRI="#BentoGoncalvesCity"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Wine"/>
+        <NamedIndividual IRI="#BuenoParalelo"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#City"/>
+        <NamedIndividual IRI="#CamposDeCimaDaSerraCity"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#City"/>
+        <NamedIndividual IRI="#CanelaCity"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Wine"/>
+        <NamedIndividual IRI="#CantoDaSereiaWine"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Variety"/>
+        <NamedIndividual IRI="#CarbenetSauvignon"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#City"/>
+        <NamedIndividual IRI="#CaxiasDoSulCity"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#WineType"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#BentoGoncalvesCity"/>
-        <Class IRI="#CanelaCity"/>
-        <Class IRI="#CaxiasDoSulCity"/>
-        <Class IRI="#GramadoCity"/>
-        <Class IRI="#MonteBeloDoSulCity"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#ChampagneType"/>
-        <Class IRI="#CompoundType"/>
-        <Class IRI="#LicorosoType"/>
-        <Class IRI="#LightType"/>
-        <Class IRI="#OfTableType"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#HighAcidity"/>
-        <Class IRI="#LowAcidity"/>
-        <Class IRI="#MiddleAcidity"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#HighSweetness"/>
-        <Class IRI="#LowSweetness"/>
-        <Class IRI="#MiddleSweetness"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#RedWine"/>
-        <Class IRI="#RoseWine"/>
-        <Class IRI="#WhiteWine"/>
-    </DisjointClasses>
+        <NamedIndividual IRI="#ChampagneType"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Variety"/>
+        <NamedIndividual IRI="#Chardonnay"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#WineType"/>
+        <NamedIndividual IRI="#CompoundType"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Feature"/>
+        <NamedIndividual IRI="#DemiSec"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Body"/>
+        <NamedIndividual IRI="#DifferentAndNice"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#City"/>
+        <NamedIndividual IRI="#DomPedritoCity"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Wine"/>
+        <NamedIndividual IRI="#DonLaurindoEstiloWine"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Wine"/>
+        <NamedIndividual IRI="#DonThomazyVictoriaCabernetWine"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Feature"/>
+        <NamedIndividual IRI="#Dry"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Wine"/>
+        <NamedIndividual IRI="#DunamisCabernetFrancWine"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Feature"/>
+        <NamedIndividual IRI="#ExtraBrut"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Body"/>
+        <NamedIndividual IRI="#FullBodied"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#City"/>
+        <NamedIndividual IRI="#GramadoCity"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Acidity"/>
+        <NamedIndividual IRI="#HighAcidity"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Sweetness"/>
+        <NamedIndividual IRI="#HighSweetness"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#WineType"/>
+        <NamedIndividual IRI="#LicorosoType"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Body"/>
+        <NamedIndividual IRI="#LightBody"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Body"/>
+        <NamedIndividual IRI="#LightToMiddleBody"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#WineType"/>
+        <NamedIndividual IRI="#LightType"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Acidity"/>
+        <NamedIndividual IRI="#LowAcidity"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Sweetness"/>
+        <NamedIndividual IRI="#LowSweetness"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Brand"/>
+        <NamedIndividual IRI="#MarcusJames"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Variety"/>
+        <NamedIndividual IRI="#Merlot"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Acidity"/>
+        <NamedIndividual IRI="#MiddleAcidity"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Body"/>
+        <NamedIndividual IRI="#MiddleBody"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Sweetness"/>
+        <NamedIndividual IRI="#MiddleSweetness"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Wine"/>
+        <NamedIndividual IRI="#MioloCuveeGiuseppe"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#City"/>
+        <NamedIndividual IRI="#MonteBeloDoSulCity"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Variety"/>
+        <NamedIndividual IRI="#Moscato"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#WineType"/>
+        <NamedIndividual IRI="#OfTableType"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Variety"/>
+        <NamedIndividual IRI="#PinotNoir"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Wine"/>
+        <NamedIndividual IRI="#PinotNoirPintoBandeira"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#City"/>
+        <NamedIndividual IRI="#PintoBandeiraCity"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Wine"/>
+        <NamedIndividual IRI="#RARPinotNoirWine"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Color"/>
+        <NamedIndividual IRI="#RedColor"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Variety"/>
+        <NamedIndividual IRI="#Riesling"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Color"/>
+        <NamedIndividual IRI="#RoseColor"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Brand"/>
+        <NamedIndividual IRI="#SaintGermain"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Wine"/>
+        <NamedIndividual IRI="#SaintGermainFrisanteBranco"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Wine"/>
+        <NamedIndividual IRI="#SaltonAntonioNini"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Feature"/>
+        <NamedIndividual IRI="#Soft"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Wine"/>
+        <NamedIndividual IRI="#ValdugaCabernetSauvignon"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Wine"/>
+        <NamedIndividual IRI="#VinheticaTerroirRouge"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Color"/>
+        <NamedIndividual IRI="#WhiteColor"/>
+    </ClassAssertion>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#AuroraCabernetFrancWine"/>
+        <NamedIndividual IRI="#CantoDaSereiaWine"/>
+        <NamedIndividual IRI="#DonLaurindoEstiloWine"/>
+        <NamedIndividual IRI="#DonThomazyVictoriaCabernetWine"/>
+        <NamedIndividual IRI="#DunamisCabernetFrancWine"/>
+        <NamedIndividual IRI="#PinotNoirPintoBandeira"/>
+        <NamedIndividual IRI="#RARPinotNoirWine"/>
+        <NamedIndividual IRI="#SaltonAntonioNini"/>
+        <NamedIndividual IRI="#ValdugaCabernetSauvignon"/>
+        <NamedIndividual IRI="#VinheticaTerroirRouge"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#AuroraCabernetFrancWine"/>
+        <NamedIndividual IRI="#DonLaurindoEstiloWine"/>
+        <NamedIndividual IRI="#DonThomazyVictoriaCabernetWine"/>
+        <NamedIndividual IRI="#DunamisCabernetFrancWine"/>
+        <NamedIndividual IRI="#RARPinotNoirWine"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#BageCity"/>
+        <NamedIndividual IRI="#BentoGoncalvesCity"/>
+        <NamedIndividual IRI="#CamposDeCimaDaSerraCity"/>
+        <NamedIndividual IRI="#CanelaCity"/>
+        <NamedIndividual IRI="#CaxiasDoSulCity"/>
+        <NamedIndividual IRI="#DomPedritoCity"/>
+        <NamedIndividual IRI="#GramadoCity"/>
+        <NamedIndividual IRI="#MonteBeloDoSulCity"/>
+        <NamedIndividual IRI="#PintoBandeiraCity"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#Dry"/>
+        <NamedIndividual IRI="#Soft"/>
+    </DifferentIndividuals>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasCity"/>
+        <NamedIndividual IRI="#AuroraBrand"/>
+        <NamedIndividual IRI="#BentoGoncalvesCity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBody"/>
+        <NamedIndividual IRI="#AuroraChardonnayPB"/>
+        <NamedIndividual IRI="#MiddleBody"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBrand"/>
+        <NamedIndividual IRI="#AuroraChardonnayPB"/>
+        <NamedIndividual IRI="#AuroraBrand"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasColor"/>
+        <NamedIndividual IRI="#AuroraChardonnayPB"/>
+        <NamedIndividual IRI="#WhiteColor"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasFeature"/>
+        <NamedIndividual IRI="#AuroraChardonnayPB"/>
+        <NamedIndividual IRI="#Dry"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasVariety"/>
+        <NamedIndividual IRI="#AuroraChardonnayPB"/>
+        <NamedIndividual IRI="#Chardonnay"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBody"/>
+        <NamedIndividual IRI="#AuroraMillesimeCS"/>
+        <NamedIndividual IRI="#DifferentAndNice"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBrand"/>
+        <NamedIndividual IRI="#AuroraMillesimeCS"/>
+        <NamedIndividual IRI="#AuroraBrand"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasColor"/>
+        <NamedIndividual IRI="#AuroraMillesimeCS"/>
+        <NamedIndividual IRI="#RedColor"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasFeature"/>
+        <NamedIndividual IRI="#AuroraMillesimeCS"/>
+        <NamedIndividual IRI="#Dry"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasVariety"/>
+        <NamedIndividual IRI="#AuroraMillesimeCS"/>
+        <NamedIndividual IRI="#CarbenetSauvignon"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBody"/>
+        <NamedIndividual IRI="#AuroraPBExtraBrut"/>
+        <NamedIndividual IRI="#LightBody"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBrand"/>
+        <NamedIndividual IRI="#AuroraPBExtraBrut"/>
+        <NamedIndividual IRI="#AuroraBrand"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasColor"/>
+        <NamedIndividual IRI="#AuroraPBExtraBrut"/>
+        <NamedIndividual IRI="#WhiteColor"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasFeature"/>
+        <NamedIndividual IRI="#AuroraPBExtraBrut"/>
+        <NamedIndividual IRI="#ExtraBrut"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasVariety"/>
+        <NamedIndividual IRI="#AuroraPBExtraBrut"/>
+        <NamedIndividual IRI="#Chardonnay"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasVariety"/>
+        <NamedIndividual IRI="#AuroraPBExtraBrut"/>
+        <NamedIndividual IRI="#PinotNoir"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasVariety"/>
+        <NamedIndividual IRI="#AuroraPBExtraBrut"/>
+        <NamedIndividual IRI="#Riesling"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBody"/>
+        <NamedIndividual IRI="#AuroraReservaChardonnay"/>
+        <NamedIndividual IRI="#LightToMiddleBody"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBrand"/>
+        <NamedIndividual IRI="#AuroraReservaChardonnay"/>
+        <NamedIndividual IRI="#AuroraBrand"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasColor"/>
+        <NamedIndividual IRI="#AuroraReservaChardonnay"/>
+        <NamedIndividual IRI="#WhiteColor"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasFeature"/>
+        <NamedIndividual IRI="#AuroraReservaChardonnay"/>
+        <NamedIndividual IRI="#Dry"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasVariety"/>
+        <NamedIndividual IRI="#AuroraReservaChardonnay"/>
+        <NamedIndividual IRI="#Chardonnay"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBody"/>
+        <NamedIndividual IRI="#AuroraReservaRose"/>
+        <NamedIndividual IRI="#LightToMiddleBody"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBrand"/>
+        <NamedIndividual IRI="#AuroraReservaRose"/>
+        <NamedIndividual IRI="#AuroraBrand"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasColor"/>
+        <NamedIndividual IRI="#AuroraReservaRose"/>
+        <NamedIndividual IRI="#RoseColor"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasFeature"/>
+        <NamedIndividual IRI="#AuroraReservaRose"/>
+        <NamedIndividual IRI="#Dry"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasVariety"/>
+        <NamedIndividual IRI="#AuroraReservaRose"/>
+        <NamedIndividual IRI="#Merlot"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSweetness"/>
+        <NamedIndividual IRI="#DemiSec"/>
+        <NamedIndividual IRI="#MiddleSweetness"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasCity"/>
+        <NamedIndividual IRI="#DonThomazyVictoriaCabernetWine"/>
+        <NamedIndividual IRI="#BageCity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSweetness"/>
+        <NamedIndividual IRI="#Dry"/>
+        <NamedIndividual IRI="#LowSweetness"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasCity"/>
+        <NamedIndividual IRI="#DunamisCabernetFrancWine"/>
+        <NamedIndividual IRI="#BageCity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSweetness"/>
+        <NamedIndividual IRI="#ExtraBrut"/>
+        <NamedIndividual IRI="#MiddleSweetness"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasCity"/>
+        <NamedIndividual IRI="#MarcusJames"/>
+        <NamedIndividual IRI="#BageCity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBody"/>
+        <NamedIndividual IRI="#PinotNoirPintoBandeira"/>
+        <NamedIndividual IRI="#MiddleBody"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBrand"/>
+        <NamedIndividual IRI="#PinotNoirPintoBandeira"/>
+        <NamedIndividual IRI="#AuroraBrand"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasColor"/>
+        <NamedIndividual IRI="#PinotNoirPintoBandeira"/>
+        <NamedIndividual IRI="#RedColor"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasFeature"/>
+        <NamedIndividual IRI="#PinotNoirPintoBandeira"/>
+        <NamedIndividual IRI="#Dry"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasVariety"/>
+        <NamedIndividual IRI="#PinotNoirPintoBandeira"/>
+        <NamedIndividual IRI="#PinotNoir"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasCity"/>
+        <NamedIndividual IRI="#RARPinotNoirWine"/>
+        <NamedIndividual IRI="#CamposDeCimaDaSerraCity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasCity"/>
+        <NamedIndividual IRI="#SaintGermain"/>
+        <NamedIndividual IRI="#BentoGoncalvesCity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBody"/>
+        <NamedIndividual IRI="#SaintGermainFrisanteBranco"/>
+        <NamedIndividual IRI="#LightBody"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBrand"/>
+        <NamedIndividual IRI="#SaintGermainFrisanteBranco"/>
+        <NamedIndividual IRI="#SaintGermain"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasColor"/>
+        <NamedIndividual IRI="#SaintGermainFrisanteBranco"/>
+        <NamedIndividual IRI="#WhiteColor"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasFeature"/>
+        <NamedIndividual IRI="#SaintGermainFrisanteBranco"/>
+        <NamedIndividual IRI="#Soft"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasVariety"/>
+        <NamedIndividual IRI="#SaintGermainFrisanteBranco"/>
+        <NamedIndividual IRI="#Moscato"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSweetness"/>
+        <NamedIndividual IRI="#Soft"/>
+        <NamedIndividual IRI="#HighSweetness"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasPrice"/>
+        <NamedIndividual IRI="#AuroraChardonnayPB"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">42</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasYear"/>
+        <NamedIndividual IRI="#AuroraChardonnayPB"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">2017</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasPrice"/>
+        <NamedIndividual IRI="#AuroraMillesimeCS"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">99</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasYear"/>
+        <NamedIndividual IRI="#AuroraMillesimeCS"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">2015</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasPrice"/>
+        <NamedIndividual IRI="#AuroraPBExtraBrut"/>
+        <Literal>99,20</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasYear"/>
+        <NamedIndividual IRI="#AuroraPBExtraBrut"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">2015</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasPrice"/>
+        <NamedIndividual IRI="#AuroraReservaChardonnay"/>
+        <Literal>42,99</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasYear"/>
+        <NamedIndividual IRI="#AuroraReservaChardonnay"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">2017</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasPrice"/>
+        <NamedIndividual IRI="#AuroraReservaRose"/>
+        <Literal>43,77</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasYear"/>
+        <NamedIndividual IRI="#AuroraReservaRose"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">2018</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasPrice"/>
+        <NamedIndividual IRI="#PinotNoirPintoBandeira"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">77</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasYear"/>
+        <NamedIndividual IRI="#PinotNoirPintoBandeira"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">2017</Literal>
+    </DataPropertyAssertion>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasAcidity"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasAcidityOf"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasBody"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasBodyOf"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasBrand"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasBrandOf"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
@@ -285,11 +939,27 @@
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasFeature"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasFeatureOf"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasSweetness"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasSweetnessOf"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasVariety"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasVarietyOf"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
@@ -305,12 +975,28 @@
         <ObjectProperty IRI="#hasAcidityOf"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
+        <ObjectProperty IRI="#hasBody"/>
+        <ObjectProperty IRI="#hasBodyOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasBrand"/>
+        <ObjectProperty IRI="#hasBrandOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
         <ObjectProperty IRI="#hasCity"/>
         <ObjectProperty IRI="#hasCityOf"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#hasColor"/>
         <ObjectProperty IRI="#hasColorOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasFeature"/>
+        <ObjectProperty IRI="#hasFeatureOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasVariety"/>
+        <ObjectProperty IRI="#hasVarietyOf"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#hasWineType"/>
@@ -320,13 +1006,25 @@
         <ObjectProperty IRI="#hasAcidity"/>
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasBody"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasBrand"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
         <ObjectProperty IRI="#hasCity"/>
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
         <ObjectProperty IRI="#hasColor"/>
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasFeature"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
         <ObjectProperty IRI="#hasSweetness"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasVariety"/>
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
         <ObjectProperty IRI="#hasWineType"/>
@@ -335,13 +1033,25 @@
         <ObjectProperty IRI="#hasAcidityOf"/>
     </InverseFunctionalObjectProperty>
     <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#hasBodyOf"/>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#hasBrandOf"/>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
         <ObjectProperty IRI="#hasCityOf"/>
     </InverseFunctionalObjectProperty>
     <InverseFunctionalObjectProperty>
         <ObjectProperty IRI="#hasColorOf"/>
     </InverseFunctionalObjectProperty>
     <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#hasFeatureOf"/>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
         <ObjectProperty IRI="#hasSweetnessOf"/>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#hasVarietyOf"/>
     </InverseFunctionalObjectProperty>
     <InverseFunctionalObjectProperty>
         <ObjectProperty IRI="#hasWineTypeOf"/>
@@ -353,6 +1063,18 @@
         <ObjectProperty IRI="#hasAcidityOf"/>
     </TransitiveObjectProperty>
     <TransitiveObjectProperty>
+        <ObjectProperty IRI="#hasBody"/>
+    </TransitiveObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#hasBodyOf"/>
+    </TransitiveObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#hasBrand"/>
+    </TransitiveObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#hasBrandOf"/>
+    </TransitiveObjectProperty>
+    <TransitiveObjectProperty>
         <ObjectProperty IRI="#hasCity"/>
     </TransitiveObjectProperty>
     <TransitiveObjectProperty>
@@ -365,10 +1087,22 @@
         <ObjectProperty IRI="#hasColorOf"/>
     </TransitiveObjectProperty>
     <TransitiveObjectProperty>
+        <ObjectProperty IRI="#hasFeature"/>
+    </TransitiveObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#hasFeatureOf"/>
+    </TransitiveObjectProperty>
+    <TransitiveObjectProperty>
         <ObjectProperty IRI="#hasSweetness"/>
     </TransitiveObjectProperty>
     <TransitiveObjectProperty>
         <ObjectProperty IRI="#hasSweetnessOf"/>
+    </TransitiveObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#hasVariety"/>
+    </TransitiveObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#hasVarietyOf"/>
     </TransitiveObjectProperty>
     <TransitiveObjectProperty>
         <ObjectProperty IRI="#hasWineType"/>
@@ -391,10 +1125,38 @@
         </ObjectSomeValuesFrom>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasBody"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasBody"/>
+            <Class IRI="#Wine"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasBodyOf"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasBodyOf"/>
+            <Class IRI="#Body"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasBrand"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasBrand"/>
+            <Class IRI="#Wine"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasBrandOf"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasBrandOf"/>
+            <Class IRI="#Brand"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasCity"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#hasCity"/>
-            <Class IRI="#Wine"/>
+            <Class IRI="#Brand"/>
         </ObjectSomeValuesFrom>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
@@ -419,6 +1181,20 @@
         </ObjectSomeValuesFrom>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasFeature"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasFeature"/>
+            <Class IRI="#Wine"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasFeatureOf"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasFeatureOf"/>
+            <Class IRI="#Feature"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasSweetness"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#hasSweetness"/>
@@ -430,6 +1206,20 @@
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#hasSweetnessOf"/>
             <Class IRI="#Sweetness"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasVariety"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasVariety"/>
+            <Class IRI="#Wine"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasVarietyOf"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasVarietyOf"/>
+            <Class IRI="#Variety"/>
         </ObjectSomeValuesFrom>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
@@ -461,6 +1251,34 @@
         </ObjectSomeValuesFrom>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasBody"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasBodyOf"/>
+            <Class IRI="#Body"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasBodyOf"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasBodyOf"/>
+            <Class IRI="#Wine"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasBrand"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasBrand"/>
+            <Class IRI="#Brand"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasBrandOf"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasBrandOf"/>
+            <Class IRI="#Wine"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#hasCity"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#hasCity"/>
@@ -471,7 +1289,7 @@
         <ObjectProperty IRI="#hasCityOf"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#hasCityOf"/>
-            <Class IRI="#Wine"/>
+            <Class IRI="#Brand"/>
         </ObjectSomeValuesFrom>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
@@ -485,6 +1303,20 @@
         <ObjectProperty IRI="#hasColorOf"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#hasColorOf"/>
+            <Class IRI="#Wine"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasFeature"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasFeature"/>
+            <Class IRI="#Feature"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasFeatureOf"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasFeatureOf"/>
             <Class IRI="#Wine"/>
         </ObjectSomeValuesFrom>
     </ObjectPropertyRange>
@@ -503,6 +1335,20 @@
         </ObjectSomeValuesFrom>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasVariety"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasVariety"/>
+            <Class IRI="#Variety"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasVarietyOf"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasVarietyOf"/>
+            <Class IRI="#Wine"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#hasWineType"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#hasWineType"/>
@@ -516,6 +1362,72 @@
             <Class IRI="#Wine"/>
         </ObjectSomeValuesFrom>
     </ObjectPropertyRange>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#hasPrice"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#hasYear"/>
+    </FunctionalDataProperty>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Acidity</IRI>
+        <Literal>Wine acidity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#AuroraPBExtraBrut</IRI>
+        <Literal>Aurora Pinto Bandeira método tradicional Extra Brut 24 meses</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#AuroraReservaChardonnay</IRI>
+        <Literal>Aurora Reserva Chardonnay</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#AuroraReservaRose</IRI>
+        <Literal>Aurora Reserva Rosé</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Body</IRI>
+        <Literal>Wine body</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Brand</IRI>
+        <Literal>Wine brand</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#City</IRI>
+        <Literal>City that produces wines</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Color</IRI>
+        <Literal>Wine color</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Feature</IRI>
+        <Literal>Defines the caracteristic about sweetness (dry, by example)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Sweetness</IRI>
+        <Literal>Level of sweetness of the wine</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Wine</IRI>
+        <Literal>A class to define a thing that is a wine</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#WineType</IRI>
+        <Literal>Wine type</Literal>
+    </AnnotationAssertion>
 </Ontology>
 
 
