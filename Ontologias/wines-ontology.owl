@@ -209,6 +209,9 @@
         <NamedIndividual IRI="#FullBodied"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#Garibaldi"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#GramadoCity"/>
     </Declaration>
     <Declaration>
@@ -273,6 +276,12 @@
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#OfTableType"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Peterlongo"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#PeterlongoPrivilegeExtraBrut"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#PinotNoir"/>
@@ -510,6 +519,10 @@
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#City"/>
+        <NamedIndividual IRI="#Garibaldi"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#City"/>
         <NamedIndividual IRI="#GramadoCity"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -595,6 +608,14 @@
     <ClassAssertion>
         <Class IRI="#WineType"/>
         <NamedIndividual IRI="#OfTableType"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Brand"/>
+        <NamedIndividual IRI="#Peterlongo"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Wine"/>
+        <NamedIndividual IRI="#PeterlongoPrivilegeExtraBrut"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Variety"/>
@@ -1021,6 +1042,31 @@
         <ObjectProperty IRI="#hasCity"/>
         <NamedIndividual IRI="#Miolo"/>
         <NamedIndividual IRI="#CamposDeCimaDaSerraCity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasCity"/>
+        <NamedIndividual IRI="#Peterlongo"/>
+        <NamedIndividual IRI="#Garibaldi"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBrand"/>
+        <NamedIndividual IRI="#PeterlongoPrivilegeExtraBrut"/>
+        <NamedIndividual IRI="#Peterlongo"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasFeature"/>
+        <NamedIndividual IRI="#PeterlongoPrivilegeExtraBrut"/>
+        <NamedIndividual IRI="#ExtraBrut"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasVariety"/>
+        <NamedIndividual IRI="#PeterlongoPrivilegeExtraBrut"/>
+        <NamedIndividual IRI="#Chardonnay"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasVariety"/>
+        <NamedIndividual IRI="#PeterlongoPrivilegeExtraBrut"/>
+        <NamedIndividual IRI="#PinotNoir"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasBody"/>
