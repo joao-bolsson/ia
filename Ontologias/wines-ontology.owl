@@ -71,6 +71,9 @@
         <Class IRI="#MonteBeloDoSulCity"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#NamedWine"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#OfTableType"/>
     </Declaration>
     <Declaration>
@@ -114,6 +117,12 @@
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasSweetnessOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasWineType"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasWineTypeOf"/>
     </Declaration>
     <SubClassOf>
         <Class IRI="#Acidity"/>
@@ -188,6 +197,10 @@
         <Class IRI="#City"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#NamedWine"/>
+        <Class IRI="#Wine"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#OfTableType"/>
         <Class IRI="#WineType"/>
     </SubClassOf>
@@ -279,6 +292,14 @@
         <ObjectProperty IRI="#hasSweetnessOf"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasWineType"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasWineTypeOf"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
     <InverseObjectProperties>
         <ObjectProperty IRI="#hasAcidity"/>
         <ObjectProperty IRI="#hasAcidityOf"/>
@@ -290,6 +311,10 @@
     <InverseObjectProperties>
         <ObjectProperty IRI="#hasColor"/>
         <ObjectProperty IRI="#hasColorOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasWineType"/>
+        <ObjectProperty IRI="#hasWineTypeOf"/>
     </InverseObjectProperties>
     <FunctionalObjectProperty>
         <ObjectProperty IRI="#hasAcidity"/>
@@ -303,6 +328,9 @@
     <FunctionalObjectProperty>
         <ObjectProperty IRI="#hasSweetness"/>
     </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasWineType"/>
+    </FunctionalObjectProperty>
     <InverseFunctionalObjectProperty>
         <ObjectProperty IRI="#hasAcidityOf"/>
     </InverseFunctionalObjectProperty>
@@ -314,6 +342,9 @@
     </InverseFunctionalObjectProperty>
     <InverseFunctionalObjectProperty>
         <ObjectProperty IRI="#hasSweetnessOf"/>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#hasWineTypeOf"/>
     </InverseFunctionalObjectProperty>
     <TransitiveObjectProperty>
         <ObjectProperty IRI="#hasAcidity"/>
@@ -338,6 +369,12 @@
     </TransitiveObjectProperty>
     <TransitiveObjectProperty>
         <ObjectProperty IRI="#hasSweetnessOf"/>
+    </TransitiveObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#hasWineType"/>
+    </TransitiveObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#hasWineTypeOf"/>
     </TransitiveObjectProperty>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasAcidity"/>
@@ -395,6 +432,20 @@
             <Class IRI="#Sweetness"/>
         </ObjectSomeValuesFrom>
     </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasWineType"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasWineType"/>
+            <Class IRI="#Wine"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasWineTypeOf"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasWineTypeOf"/>
+            <Class IRI="#WineType"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasAcidity"/>
         <ObjectSomeValuesFrom>
@@ -448,6 +499,20 @@
         <ObjectProperty IRI="#hasSweetnessOf"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#hasSweetnessOf"/>
+            <Class IRI="#Wine"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasWineType"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasWineType"/>
+            <Class IRI="#WineType"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasWineTypeOf"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasWineTypeOf"/>
             <Class IRI="#Wine"/>
         </ObjectSomeValuesFrom>
     </ObjectPropertyRange>
