@@ -194,7 +194,13 @@
         <NamedIndividual IRI="#Dry"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#Dunamis"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#DunamisCabernetFrancWine"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#EstanciaParaiso"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#ExtraBrut"/>
@@ -252,6 +258,9 @@
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#MiddleSweetness"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Miolo"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#MioloCuveeGiuseppe"/>
@@ -480,8 +489,16 @@
         <NamedIndividual IRI="#Dry"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="#Brand"/>
+        <NamedIndividual IRI="#Dunamis"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#Wine"/>
         <NamedIndividual IRI="#DunamisCabernetFrancWine"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Brand"/>
+        <NamedIndividual IRI="#EstanciaParaiso"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Feature"/>
@@ -558,6 +575,10 @@
     <ClassAssertion>
         <Class IRI="#Sweetness"/>
         <NamedIndividual IRI="#MiddleSweetness"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Brand"/>
+        <NamedIndividual IRI="#Miolo"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Wine"/>
@@ -639,18 +660,6 @@
         <Class IRI="#Color"/>
         <NamedIndividual IRI="#White"/>
     </ClassAssertion>
-    <DifferentIndividuals>
-        <NamedIndividual IRI="#AuroraCabernetFrancWine"/>
-        <NamedIndividual IRI="#CantoDaSereiaWine"/>
-        <NamedIndividual IRI="#DonLaurindoEstiloWine"/>
-        <NamedIndividual IRI="#DonThomazyVictoriaCabernetWine"/>
-        <NamedIndividual IRI="#DunamisCabernetFrancWine"/>
-        <NamedIndividual IRI="#PinotNoirPintoBandeira"/>
-        <NamedIndividual IRI="#RARPinotNoirWine"/>
-        <NamedIndividual IRI="#SaltonAntonioNini"/>
-        <NamedIndividual IRI="#ValdugaCabernetSauvignon"/>
-        <NamedIndividual IRI="#VinheticaTerroirRouge"/>
-    </DifferentIndividuals>
     <DifferentIndividuals>
         <NamedIndividual IRI="#AuroraCabernetFrancWine"/>
         <NamedIndividual IRI="#DonLaurindoEstiloWine"/>
@@ -924,9 +933,9 @@
         <NamedIndividual IRI="#MiddleSweetness"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#hasCity"/>
+        <ObjectProperty IRI="#hasBrand"/>
         <NamedIndividual IRI="#DonThomazyVictoriaCabernetWine"/>
-        <NamedIndividual IRI="#BageCity"/>
+        <NamedIndividual IRI="#EstanciaParaiso"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasSweetness"/>
@@ -935,7 +944,17 @@
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasCity"/>
+        <NamedIndividual IRI="#Dunamis"/>
+        <NamedIndividual IRI="#DomPedritoCity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBrand"/>
         <NamedIndividual IRI="#DunamisCabernetFrancWine"/>
+        <NamedIndividual IRI="#Dunamis"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasCity"/>
+        <NamedIndividual IRI="#EstanciaParaiso"/>
         <NamedIndividual IRI="#BageCity"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
@@ -999,6 +1018,11 @@
         <NamedIndividual IRI="#BageCity"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasCity"/>
+        <NamedIndividual IRI="#Miolo"/>
+        <NamedIndividual IRI="#CamposDeCimaDaSerraCity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasBody"/>
         <NamedIndividual IRI="#PinotNoirPintoBandeira"/>
         <NamedIndividual IRI="#MiddleBody"/>
@@ -1024,9 +1048,24 @@
         <NamedIndividual IRI="#PinotNoir"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#hasCity"/>
+        <ObjectProperty IRI="#hasBody"/>
         <NamedIndividual IRI="#RARPinotNoirWine"/>
-        <NamedIndividual IRI="#CamposDeCimaDaSerraCity"/>
+        <NamedIndividual IRI="#Rich"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBrand"/>
+        <NamedIndividual IRI="#RARPinotNoirWine"/>
+        <NamedIndividual IRI="#Miolo"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasColor"/>
+        <NamedIndividual IRI="#RARPinotNoirWine"/>
+        <NamedIndividual IRI="#Red"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasVariety"/>
+        <NamedIndividual IRI="#RARPinotNoirWine"/>
+        <NamedIndividual IRI="#PinotNoir"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasCity"/>
