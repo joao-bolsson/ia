@@ -38,10 +38,70 @@
         <Class IRI="#Harmonization"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Marcas_de_Alto_Feliz"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Marcas_de_Bagé"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Marcas_de_Bento"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Marcas_de_Dom_Pedrito"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Sweetness"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Variety"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Vinhos_Brancos"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Vinhos_Cabernet_Sauvinon"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Vinhos_Chardonnay"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Vinhos_Guatambu"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Vinhos_Rosé"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Vinhos_Tannat"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Vinhos_demi_sec"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Vinhos_extra_brutt"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Vinhos_leves"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Vinhos_marca_Aurora"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Vinhos_merlot"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Vinhos_moscato"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Vinhos_médios"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Vinhos_secos"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Vinhos_suaves"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Vinhos_tintos"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Wine"/>
@@ -415,6 +475,146 @@
     <Declaration>
         <NamedIndividual IRI="#White"/>
     </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#Marcas_de_Alto_Feliz"/>
+        <ObjectHasValue>
+            <ObjectProperty IRI="#hasCity"/>
+            <NamedIndividual IRI="#AltoFeliz"/>
+        </ObjectHasValue>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Marcas_de_Bagé"/>
+        <ObjectHasValue>
+            <ObjectProperty IRI="#hasCity"/>
+            <NamedIndividual IRI="#BageCity"/>
+        </ObjectHasValue>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Marcas_de_Bento"/>
+        <ObjectHasValue>
+            <ObjectProperty IRI="#hasCity"/>
+            <NamedIndividual IRI="#BentoGoncalvesCity"/>
+        </ObjectHasValue>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Marcas_de_Dom_Pedrito"/>
+        <ObjectHasValue>
+            <ObjectProperty IRI="#hasCity"/>
+            <NamedIndividual IRI="#DomPedritoCity"/>
+        </ObjectHasValue>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Vinhos_Brancos"/>
+        <ObjectHasValue>
+            <ObjectProperty IRI="#hasColor"/>
+            <NamedIndividual IRI="#White"/>
+        </ObjectHasValue>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Vinhos_Cabernet_Sauvinon"/>
+        <ObjectHasValue>
+            <ObjectProperty IRI="#hasVariety"/>
+            <NamedIndividual IRI="#CabenetSauvignon"/>
+        </ObjectHasValue>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Vinhos_Chardonnay"/>
+        <ObjectHasValue>
+            <ObjectProperty IRI="#hasVariety"/>
+            <NamedIndividual IRI="#Chardonnay"/>
+        </ObjectHasValue>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Vinhos_Guatambu"/>
+        <ObjectHasValue>
+            <ObjectProperty IRI="#hasBrand"/>
+            <NamedIndividual IRI="#Guatambu"/>
+        </ObjectHasValue>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Vinhos_Rosé"/>
+        <ObjectHasValue>
+            <ObjectProperty IRI="#hasColor"/>
+            <NamedIndividual IRI="#Rose"/>
+        </ObjectHasValue>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Vinhos_Tannat"/>
+        <ObjectHasValue>
+            <ObjectProperty IRI="#hasVariety"/>
+            <NamedIndividual IRI="#Tannat"/>
+        </ObjectHasValue>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Vinhos_demi_sec"/>
+        <ObjectHasValue>
+            <ObjectProperty IRI="#hasFeature"/>
+            <NamedIndividual IRI="#DemiSec"/>
+        </ObjectHasValue>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Vinhos_extra_brutt"/>
+        <ObjectHasValue>
+            <ObjectProperty IRI="#hasFeature"/>
+            <NamedIndividual IRI="#ExtraBrut"/>
+        </ObjectHasValue>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Vinhos_leves"/>
+        <ObjectHasValue>
+            <ObjectProperty IRI="#hasBody"/>
+            <NamedIndividual IRI="#LightBody"/>
+        </ObjectHasValue>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Vinhos_marca_Aurora"/>
+        <ObjectHasValue>
+            <ObjectProperty IRI="#hasBrand"/>
+            <NamedIndividual IRI="#Aurora"/>
+        </ObjectHasValue>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Vinhos_merlot"/>
+        <ObjectHasValue>
+            <ObjectProperty IRI="#hasVariety"/>
+            <NamedIndividual IRI="#Merlot"/>
+        </ObjectHasValue>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Vinhos_moscato"/>
+        <ObjectHasValue>
+            <ObjectProperty IRI="#hasVariety"/>
+            <NamedIndividual IRI="#Moscato"/>
+        </ObjectHasValue>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Vinhos_médios"/>
+        <ObjectHasValue>
+            <ObjectProperty IRI="#hasBody"/>
+            <NamedIndividual IRI="#MiddleBody"/>
+        </ObjectHasValue>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Vinhos_secos"/>
+        <ObjectHasValue>
+            <ObjectProperty IRI="#hasFeature"/>
+            <NamedIndividual IRI="#Dry"/>
+        </ObjectHasValue>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Vinhos_suaves"/>
+        <ObjectHasValue>
+            <ObjectProperty IRI="#hasFeature"/>
+            <NamedIndividual IRI="#Soft"/>
+        </ObjectHasValue>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Vinhos_tintos"/>
+        <ObjectHasValue>
+            <ObjectProperty IRI="#hasColor"/>
+            <NamedIndividual IRI="#Red"/>
+        </ObjectHasValue>
+    </EquivalentClasses>
     <SubClassOf>
         <Class IRI="#Acidity"/>
         <Class IRI="#Wine"/>
