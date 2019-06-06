@@ -70,8 +70,16 @@ for i, x in enumerate(X):
          markerfacecolor = 'None',
          markersize=10,
          markeredgewidth=2) # +0.5 to plot on the center of square on the map
- 
+
 show()
 
+# Finding the ouliers
+mappings = som.win_map(X)
 
+# Getting the list of cheaters
+# We need to identify the coordinates of winning nodes that contains outliers (the clearers ones)
+# We identify 2 nodes that contains possible cheaters (outliers)
+# (5,1) and (3,7)
+frauds = np.concatenate((mappings[(5,1)], mappings[(3,7)]))
+frauds = sc.inverse_transform(frauds)
 
